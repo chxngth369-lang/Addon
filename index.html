@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star_show | Add-ons Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body onload="updateGallery()">
+
+    <div class="bg-wrapper">
+        <div class="night">
+            <div class="shooting_star"></div><div class="shooting_star"></div><div class="shooting_star"></div><div class="shooting_star"></div><div class="shooting_star"></div>
+        </div>
+    </div>
+
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo"><i class="fab fa-tiktok"></i> Star_show</div>
+            <nav>
+                <p class="nav-title">CATEGORIES</p>
+                <ul>
+                    <li class="nav-item active" data-cat="addon" onclick="filterScripts('addon', this)">
+                        <i class="fas fa-plus-square"></i> Add-on
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h1 class="neon-text">Add-on Collection</h1>
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="ค้นหา Add-on...">
+                </div>
+            </header>
+
+            <div class="grid" id="scriptGrid">
+                <div class="card" data-category="addon">
+                    <div class="card-info">
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Action and Stuff</h3>
+                        <p class="card-desc">มัดรวมฟีเจอร์เสริมสำหรับการเคลื่อนไหวและลูกเล่นต่างๆ ภายในเกม</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Action and Stuff', 'Add-on', '#')">
+                                <i class="fas fa-search-plus"></i> ดูรายละเอียด
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="scriptModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle">Script Name</h2>
+            <p id="modalCategory" style="color: var(--primary); margin: 10px 0;">Category</p>
+            <div class="modal-body-text"><p>กดปุ่มด้านล่างเพื่อรับลิงก์สคริปต์</p></div>
+            <a id="scriptLink" href="#" target="_blank" class="get-script-btn rgb-animate">
+                <i class="fas fa-download"></i> GET LINK
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
