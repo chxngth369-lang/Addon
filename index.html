@@ -3,70 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star_show | Add-ons Hub</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Minecraft Addons & Shaders Hub</title>
+    <style>
+        :root {
+            --primary: #2ecc71;
+            --secondary: #3498db;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a;
+            color: var(--light);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+        h1 { text-align: center; color: var(--primary); }
+        .category-title {
+            border-left: 5px solid var(--primary);
+            padding-left: 15px;
+            margin: 40px 0 20px;
+            color: var(--secondary);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: #252525;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid #333;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+        .card h3 { margin-top: 0; font-size: 1.1rem; }
+        .download-btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        .download-btn:hover {
+            background-color: #27ae60;
+        }
+        .shader-card .download-btn {
+            background-color: var(--secondary);
+        }
+        .shader-card .download-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
 </head>
-<body onload="updateGallery()">
+<body>
 
-    <div class="bg-wrapper">
-        <div class="night">
-            <div class="shooting_star"></div><div class="shooting_star"></div><div class="shooting_star"></div><div class="shooting_star"></div><div class="shooting_star"></div>
+<div class="container">
+    <h1>🎮 Minecraft Content Hub</h1>
+
+    <h2 class="category-title">🛠️ หมวดหมู่: Addon</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Action and Stuff</h3>
+            <a href="https://link-target.net/1461516/a8BRC3RJIxvf" class="download-btn" target="_blank">Download</a>
+        </div>
+        <div class="card">
+            <h3>Security Addon</h3>
+            <a href="https://link-hub.net/1461516/3xNlWdCeDeTt" class="download-btn" target="_blank">Download</a>
+        </div>
+        <div class="card">
+            <h3>TrueRealism HD</h3>
+            <a href="https://link-center.net/1461516/HxtT3yYdUomd" class="download-btn" target="_blank">Download</a>
+        </div>
+        <div class="card">
+            <h3>Furniture Addon</h3>
+            <a href="https://link-target.net/1461516/ab1fCe914Gq7" class="download-btn" target="_blank">Download</a>
+        </div>
+        <div class="card">
+            <h3>NPC The Ringmaster</h3>
+            <a href="https://direct-link.net/1461516/kGhXD9JwaK4A" class="download-btn" target="_blank">Download</a>
+        </div>
+        <div class="card">
+            <h3>Craftable Modern Bases</h3>
+            <a href="https://direct-link.net/1461516/1FWdT7CutPB2" class="download-btn" target="_blank">Download</a>
+        </div>
+        <div class="card">
+            <h3>Scary Mobs Addon</h3>
+            <a href="https://link-center.net/1461516/k9RYsjnpymHo" class="download-btn" target="_blank">Download</a>
+        </div>
+        <div class="card">
+            <h3>Cars Addon</h3>
+            <a href="https://link-center.net/1461516/87v5YADQIK2c" class="download-btn" target="_blank">Download</a>
         </div>
     </div>
 
-    <div class="app-container">
-        <aside class="sidebar">
-            <div class="logo"><i class="fab fa-tiktok"></i> Star_show</div>
-            <nav>
-                <p class="nav-title">CATEGORIES</p>
-                <ul>
-                    <li class="nav-item active" data-cat="addon" onclick="filterScripts('addon', this)">
-                        <i class="fas fa-plus-square"></i> Add-on
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-
-        <main class="main-content">
-            <header>
-                <h1 class="neon-text">Add-on Collection</h1>
-                <div class="search-bar">
-                    <i class="fas fa-search"></i>
-                    <input type="text" id="searchInput" placeholder="ค้นหา Add-on...">
-                </div>
-            </header>
-
-            <div class="grid" id="scriptGrid">
-                <div class="card" data-category="addon">
-                    <div class="card-info">
-                        <span class="tag tag-addon">ADD-ON</span>
-                        <h3>Action and Stuff</h3>
-                        <p class="card-desc">มัดรวมฟีเจอร์เสริมสำหรับการเคลื่อนไหวและลูกเล่นต่างๆ ภายในเกม</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Action and Stuff', 'Add-on', '#')">
-                                <i class="fas fa-search-plus"></i> ดูรายละเอียด
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
-
-    <div id="scriptModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h2 id="modalTitle">Script Name</h2>
-            <p id="modalCategory" style="color: var(--primary); margin: 10px 0;">Category</p>
-            <div class="modal-body-text"><p>กดปุ่มด้านล่างเพื่อรับลิงก์สคริปต์</p></div>
-            <a id="scriptLink" href="#" target="_blank" class="get-script-btn rgb-animate">
-                <i class="fas fa-download"></i> GET LINK
-            </a>
+    <h2 class="category-title">✨ หมวดหมู่: Shader for Vibrant Visual</h2>
+    <div class="grid">
+        <div class="card shader-card">
+            <h3>Prizma Visual</h3>
+            <a href="https://direct-link.net/1461516/ICndI6a3aBlu" class="download-btn" target="_blank">Download</a>
+        </div>
+        <div class="card shader-card">
+            <h3>Luminous Dream</h3>
+            <a href="https://link-hub.net/1461516/WbNbgo6VFlgs" class="download-btn" target="_blank">Download</a>
+        </div>
+        <div class="card shader-card">
+            <h3>Revolution Vibrant Visual</h3>
+            <a href="https://link-center.net/1461516/dJkRCWHDKsZU" class="download-btn" target="_blank">Download</a>
+        </div>
+        <div class="card shader-card">
+            <h3>Solace V</h3>
+            <a href="https://link-target.net/1461516/x80Mu5CMkTJq" class="download-btn" target="_blank">Download</a>
+        </div>
+        <div class="card shader-card">
+            <h3>Vanilla Reforged</h3>
+            <a href="https://direct-link.net/1461516/jRWCRfiZJEO0" class="download-btn" target="_blank">Download</a>
         </div>
     </div>
 
-    <script src="script.js"></script>
+</div>
+
 </body>
 </html>
