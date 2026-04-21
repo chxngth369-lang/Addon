@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star MCBE | Add-ons Hub</title>
+    <title>Star_show | Delta & Addons Hub</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
@@ -12,24 +12,42 @@
 
     <div class="bg-wrapper">
         <div class="night">
-            <div class="shooting_star"></div><div class="shooting_star"></div><div class="shooting_star"></div><div class="shooting_star"></div><div class="shooting_star"></div>
+            <div class="shooting_star"></div><div class="shooting_star"></div><div class="shooting_star"></div><div class="shooting_star"></div><div class="shooting_star"></div><div class="shooting_star"></div><div class="shooting_star"></div><div class="shooting_star"></div><div class="shooting_star"></div><div class="shooting_star"></div>
         </div>
     </div>
 
     <div class="app-container">
         <aside class="sidebar">
-            <div class="logo"><i class="fab fa-tiktok"></i> Star MCBE</div>
+            <div class="logo"><i class="fab fa-tiktok"></i> Star_show</div>
             <nav>
                 <p class="nav-title">CATEGORIES</p>
                 <ul>
                     <li class="nav-item active" data-cat="all" onclick="filterScripts('all', this)">
-                        <i class="fas fa-th-large"></i> All Content
+                        <i class="fas fa-th-large"></i> ทั้งหมด
+                    </li>
+                    <li class="nav-item" data-cat="delta" onclick="filterScripts('delta', this)">
+                        <span>🥷</span> ตัวรัน Delta
+                    </li>
+                    <li class="nav-item" data-cat="strongest-battle" onclick="filterScripts('strongest-battle', this)">
+                        <i class="fas fa-hand-rock"></i> Strongest Battleground
+                    </li>
+                    <li class="nav-item" data-cat="blade-ball" onclick="filterScripts('blade-ball', this)">
+                        <i class="fas fa-volleyball-ball"></i> Blade Ball
                     </li>
                     <li class="nav-item" data-cat="addon" onclick="filterScripts('addon', this)">
-                        <i class="fas fa-plus-square"></i> Add-ons
+                        <i class="fas fa-plus-square"></i> Addon
                     </li>
                     <li class="nav-item" data-cat="shader" onclick="filterScripts('shader', this)">
-                        <i class="fas fa-magic"></i> Vibrant Shaders
+                        <i class="fas fa-sun"></i> Shader for Vibrant Visual
+                    </li>
+                    <li class="nav-item" data-cat="evade" onclick="filterScripts('evade', this)">
+                        <i class="fas fa-running"></i> Evade
+                    </li>
+                    <li class="nav-item" data-cat="natural-disaster" onclick="filterScripts('natural-disaster', this)">
+                        <i class="fas fa-cloud-showers-heavy"></i> Natural Disaster
+                    </li>
+                    <li class="nav-item" data-cat="murder-mystery" onclick="filterScripts('murder-mystery', this)">
+                        <i class="fas fa-skull"></i> Murder Mystery
                     </li>
                 </ul>
             </nav>
@@ -37,207 +55,121 @@
 
         <main class="main-content">
             <header>
-                <h1 class="neon-text">Star MCBE Collection</h1>
+                <h1 class="neon-text">คลังแสงสคริปต์ & Addons</h1>
                 <div class="search-bar">
                     <i class="fas fa-search"></i>
-                    <input type="text" id="searchInput" placeholder="Search for content...">
+                    <input type="text" id="searchInput" placeholder="ค้นหาที่นี่...">
                 </div>
             </header>
 
             <div class="grid" id="scriptGrid">
                 
-                <div class="card" data-category="addon">
+                <div class="card" data-category="delta">
                     <div class="card-info">
-                        <span class="tag tag-addon">ADD-ON</span>
-                        <h3>Action and Stuff</h3>
-                        <p class="card-desc">Enhanced animations and gameplay mechanics for a smoother experience.</p>
+                        <span class="tag tag-exploit">EXPLOIT</span>
+                        <h3>Delta Executor</h3>
                         <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Action and Stuff', 'Add-on', 'https://link-target.net/1461516/a8BRC3RJIxvf')">Details</button>
+                            <button class="btn-os btn-android" onclick="openModal('Delta Android', 'Exploit', 'https://direct-link.net/1461516/aT7c6YSz9mq5')"><i class="fab fa-android"></i> Android</button>
+                            <button class="btn-os btn-ios" onclick="openModal('Delta iOS', 'Exploit', 'https://direct-link.net/1461516/zhT73R2BMvLg')"><i class="fab fa-apple"></i> iOS</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="card" data-category="addon">
                     <div class="card-info">
-                        <span class="tag tag-addon">ADD-ON</span>
-                        <h3>Security Addon</h3>
-                        <p class="card-desc">Advanced security systems and defensive tools for your base.</p>
+                        <span class="tag tag-map">ADDON</span>
+                        <h3>SCP Uncaged</h3>
                         <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Security Addon', 'Add-on', 'https://link-hub.net/1461516/3xNlWdCeDeTt')">Details</button>
+                            <button class="btn-detail" onclick="openModal('SCP Uncaged', 'Addon', 'https://link-center.net/1461516/MCugHbWBjGlp')">ดูรายละเอียด</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="card" data-category="addon">
                     <div class="card-info">
-                        <span class="tag tag-addon">ADD-ON</span>
-                        <h3>TrueRealism HD</h3>
-                        <p class="card-desc">High-definition textures and realistic environmental changes.</p>
+                        <span class="tag tag-map">ADDON</span>
+                        <h3>Airplanes Addon</h3>
                         <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('TrueRealism HD', 'Add-on', 'https://link-center.net/1461516/HxtT3yYdUomd')">Details</button>
+                            <button class="btn-detail" onclick="openModal('Airplanes Addon', 'Addon', 'https://link-target.net/1461516/7fGlIqmdSq6l')">ดูรายละเอียด</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="card" data-category="addon">
                     <div class="card-info">
-                        <span class="tag tag-addon">ADD-ON</span>
-                        <h3>Furniture Addon</h3>
-                        <p class="card-desc">Modern furniture and interior decorations for your builds.</p>
+                        <span class="tag tag-map">ADDON</span>
+                        <h3>Vehicles Resource Packs</h3>
                         <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Furniture Addon', 'Add-on', 'https://link-target.net/1461516/ab1fCe914Gq7')">Details</button>
+                            <button class="btn-detail" onclick="openModal('Vehicles Resource Packs', 'Addon', 'https://link-hub.net/1461516/K3e4WD7WwuPt')">ดูรายละเอียด</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="card" data-category="addon">
                     <div class="card-info">
-                        <span class="tag tag-addon">ADD-ON</span>
-                        <h3>NPC The Ringmaster</h3>
-                        <p class="card-desc">Unique NPCs and story elements added to your world.</p>
+                        <span class="tag tag-map">ADDON</span>
+                        <h3>100 Structures 2.0</h3>
                         <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('NPC The Ringmaster', 'Add-on', 'https://direct-link.net/1461516/kGhXD9JwaK4A')">Details</button>
+                            <button class="btn-detail" onclick="openModal('100 Structures 2.0', 'Addon', 'https://direct-link.net/1461516/EyKLFrLv3Oro')">ดูรายละเอียด</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="card" data-category="addon">
                     <div class="card-info">
-                        <span class="tag tag-addon">ADD-ON</span>
-                        <h3>Craftable Modern Bases</h3>
-                        <p class="card-desc">Build your own high-tech survival bases with new recipes.</p>
+                        <span class="tag tag-map">ADDON</span>
+                        <h3>Furniture Craftable</h3>
                         <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Craftable Modern Bases', 'Add-on', 'https://direct-link.net/1461516/1FWdT7CutPB2')">Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" data-category="addon">
-                    <div class="card-info">
-                        <span class="tag tag-addon">ADD-ON</span>
-                        <h3>Scary Mobs Addon</h3>
-                        <p class="card-desc">Terrifying new creatures and horror-themed survival challenges.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Scary Mobs Addon', 'Add-on', 'https://link-center.net/1461516/k9RYsjnpymHo')">Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" data-category="addon">
-                    <div class="card-info">
-                        <span class="tag tag-addon">ADD-ON</span>
-                        <h3>Cars Addon</h3>
-                        <p class="card-desc">Drivable vehicles and luxury cars for your modern city.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Cars Addon', 'Add-on', 'https://link-center.net/1461516/87v5YADQIK2c')">Details</button>
+                            <button class="btn-detail" onclick="openModal('Furniture Craftable', 'Addon', 'https://link-target.net/1461516/tmGwPxXDw2Ud')">ดูรายละเอียด</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="card" data-category="shader">
                     <div class="card-info">
-                        <span class="tag tag-shader" style="background: #e67e22;">SHADER</span>
-                        <h3>Prizma Visual</h3>
-                        <p class="card-desc">Vibrant colors and enhanced lighting for a fresh look.</p>
+                        <span class="tag tag-map">SHADER</span>
+                        <h3>Mirai Shader</h3>
                         <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Prizma Visual', 'Shader', 'https://direct-link.net/1461516/ICndI6a3aBlu')">Details</button>
+                            <button class="btn-detail" onclick="openModal('Mirai Shader', 'Shader', 'https://link-center.net/1461516/5k6DUYrNRVmf')">
+                                <i class="fab fa-android"></i> Supports only android
+                            </button>
                         </div>
                     </div>
                 </div>
 
-                <div class="card" data-category="shader">
+                <div class="card" data-category="blade-ball">
                     <div class="card-info">
-                        <span class="tag tag-shader" style="background: #e67e22;">SHADER</span>
-                        <h3>Luminous Dream</h3>
-                        <p class="card-desc">Dreamy aesthetic with soft lighting and beautiful shadows.</p>
+                        <span class="tag tag-map">BLADE BALL</span>
+                        <h3>Nexdo Hub</h3>
                         <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Luminous Dream', 'Shader', 'https://link-hub.net/1461516/WbNbgo6VFlgs')">Details</button>
+                            <button class="btn-detail" onclick="openModal('Nexdo Hub', 'Blade Ball', 'https://link-hub.net/1461516/9WLfFjcMb5yQ')">ดูรายละเอียด</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="card" data-category="shader">
+                <div class="card" data-category="strongest-battle">
                     <div class="card-info">
-                        <span class="tag tag-shader" style="background: #e67e22;">SHADER</span>
-                        <h3>Revolution Vibrant</h3>
-                        <p class="card-desc">Maximum color saturation and vibrant environmental visuals.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Revolution Vibrant Visual', 'Shader', 'https://link-center.net/1461516/dJkRCWHDKsZU')">Details</button>
-                        </div>
+                        <span class="tag tag-map">TSB</span>
+                        <h3>M1 Reset</h3>
+                        <div class="btn-group"><button class="btn-detail" onclick="openModal('M1 Reset', 'TSB', 'https://link-center.net/1461516/1U29Rt2LyX1q')">ดูรายละเอียด</button></div>
                     </div>
                 </div>
-
-                <div class="card" data-category="shader">
-                    <div class="card-info">
-                        <span class="tag tag-shader" style="background: #e67e22;">SHADER</span>
-                        <h3>Solace V</h3>
-                        <p class="card-desc">High-performance shader with realistic sun and water effects.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Solace V', 'Shader', 'https://link-target.net/1461516/x80Mu5CMkTJq')">Details</button>
-                        </div>
-                    </div>
                 </div>
-
-                <div class="card" data-category="shader">
-                    <div class="card-info">
-                        <span class="tag tag-shader" style="background: #e67e22;">SHADER</span>
-                        <h3>Vanilla Reforged</h3>
-                        <p class="card-desc">Classic MC style updated with modern shader technology.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Vanilla Reforged', 'Shader', 'https://direct-link.net/1461516/jRWCRfiZJEO0')">Details</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
         </main>
     </div>
 
     <div id="scriptModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h2 id="modalTitle">File Name</h2>
-            <p id="modalCategory" style="color: #2ecc71; margin: 10px 0;">Category</p>
-            <div class="modal-body-text"><p>Click the button below to go to the download page.</p></div>
-            <a id="scriptLink" href="#" target="_blank" class="get-script-btn rgb-animate" style="text-decoration: none; display: block; text-align: center; padding: 15px; background: #2ecc71; color: white; border-radius: 8px; margin-top: 20px; font-weight: bold; font-family: 'Kanit', sans-serif;">
-                <i class="fas fa-download"></i> GET DOWNLOAD LINK
+            <h2 id="modalTitle">Name</h2>
+            <p id="modalCategory" style="color: var(--primary); margin: 10px 0;">Category</p>
+            <div class="modal-body-text"><p>กดปุ่มด้านล่างเพื่อรับลิงก์</p></div>
+            <a id="scriptLink" href="#" target="_blank" class="get-script-btn rgb-animate">
+                <i class="fas fa-download"></i> GET LINK
             </a>
         </div>
     </div>
 
-    <script>
-        function openModal(name, cat, link) {
-            document.getElementById('modalTitle').innerText = name;
-            document.getElementById('modalCategory').innerText = cat;
-            document.getElementById('scriptLink').href = link;
-            document.getElementById('scriptModal').style.display = "block";
-        }
-
-        function closeModal() {
-            document.getElementById('scriptModal').style.display = "none";
-        }
-
-        function filterScripts(category, element) {
-            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
-            element.classList.add('active');
-            let cards = document.querySelectorAll('.card');
-            cards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        document.getElementById('searchInput').addEventListener('input', function(e) {
-            let term = e.target.value.toLowerCase();
-            let cards = document.querySelectorAll('.card');
-            cards.forEach(card => {
-                let name = card.querySelector('h3').innerText.toLowerCase();
-                card.style.display = name.includes(term) ? 'block' : 'none';
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
