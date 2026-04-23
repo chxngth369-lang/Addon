@@ -12,7 +12,16 @@
 
     <div class="bg-wrapper">
         <div class="night">
-            <div class="shooting_star"></div><div class="shooting_star"></div><div class="shooting_star"></div><div class="shooting_star"></div><div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
+            <div class="shooting_star"></div>
         </div>
     </div>
 
@@ -27,6 +36,9 @@
                     </li>
                     <li class="nav-item" data-cat="addon" onclick="filterScripts('addon', this)">
                         <i class="fas fa-plus-square"></i> Add-ons
+                    </li>
+                    <li class="nav-item" data-cat="texture" onclick="filterScripts('texture', this)">
+                        <i class="fas fa-images"></i> Texture Packs
                     </li>
                     <li class="nav-item" data-cat="shader" onclick="filterScripts('shader', this)">
                         <i class="fas fa-magic"></i> Vibrant Shaders
@@ -49,6 +61,61 @@
 
             <div class="grid" id="scriptGrid">
                 
+                <div class="card" data-category="texture">
+                    <div class="card-info">
+                        <span class="tag tag-texture" style="background: #3498db;">TEXTURE</span>
+                        <h3>Scatter Grass</h3>
+                        <p class="card-desc">Realistic grass density and natural scattering effects for your world.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Scatter Grass', 'Texture Pack', 'https://direct-link.net/1461516/TdE8pZpBWfVH')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="texture">
+                    <div class="card-info">
+                        <span class="tag tag-texture" style="background: #3498db;">TEXTURE</span>
+                        <h3>Patrix 32x32</h3>
+                        <p class="card-desc">High-quality optimized textures. Professional look with great performance.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Patrix 32x32', 'Texture Pack', 'https://direct-link.net/1461516/d5KNdErq6n1V')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="texture">
+                    <div class="card-info">
+                        <span class="tag tag-texture" style="background: #3498db;">TEXTURE</span>
+                        <h3>Patrix 64x64</h3>
+                        <p class="card-desc">The perfect balance between high-end visuals and gameplay stability.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Patrix 64x64', 'Texture Pack', 'https://direct-link.net/1461516/TnbcUjP4jYfI')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="texture">
+                    <div class="card-info">
+                        <span class="tag tag-texture" style="background: #3498db;">TEXTURE</span>
+                        <h3>Patrix 128x128</h3>
+                        <p class="card-desc">Ultra-realistic texture depth for high-end devices. True immersion.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Patrix 128x128', 'Texture Pack', 'https://link-target.net/1461516/qjleiAxt06')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="texture">
+                    <div class="card-info">
+                        <span class="tag tag-texture" style="background: #3498db;">TEXTURE</span>
+                        <h3>Modernarch 128x128</h3>
+                        <p class="card-desc">Hyper-realistic modern architecture and sleek material textures.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Modernarch 128x128', 'Texture Pack', 'https://link-center.net/1461516/wwe0ngyqAJQ2')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="card" data-category="patch">
                     <div class="card-info">
                         <span class="tag tag-patch" style="background: #9b59b6;">PATCH</span>
@@ -64,7 +131,7 @@
                     <div class="card-info">
                         <span class="tag tag-addon">ADD-ON</span>
                         <h3>Action and Stuff</h3>
-                        <p class="card-desc">Enhanced animations and gameplay mechanics.</p>
+                        <p class="card-desc">Enhanced animations and gameplay mechanics for more dynamic movement.</p>
                         <div class="btn-group">
                             <button class="btn-detail" onclick="openModal('Action and Stuff', 'Add-on', 'https://link-target.net/1461516/a8BRC3RJIxvf')">Details</button>
                         </div>
@@ -75,7 +142,7 @@
                     <div class="card-info">
                         <span class="tag tag-addon">ADD-ON</span>
                         <h3>SCP Uncaged</h3>
-                        <p class="card-desc">Bring terrifying SCP entities into your world.</p>
+                        <p class="card-desc">Bring terrifying SCP entities and containment breach horror into your world.</p>
                         <div class="btn-group">
                             <button class="btn-detail" onclick="openModal('SCP Uncaged', 'Add-on', 'https://link-center.net/1461516/MCugHbWBjGlp')">Details</button>
                         </div>
@@ -86,7 +153,7 @@
                     <div class="card-info">
                         <span class="tag tag-addon">ADD-ON</span>
                         <h3>Airplanes Addon</h3>
-                        <p class="card-desc">Fly with various aircraft and aviation gear.</p>
+                        <p class="card-desc">Fly across your seeds with various functional aircraft and aviation gear.</p>
                         <div class="btn-group">
                             <button class="btn-detail" onclick="openModal('Airplanes Addon', 'Add-on', 'https://link-target.net/1461516/7fGlIqmdSq6l')">Details</button>
                         </div>
@@ -97,7 +164,7 @@
                     <div class="card-info">
                         <span class="tag tag-addon">ADD-ON</span>
                         <h3>Vehicles Resource Packs</h3>
-                        <p class="card-desc">High-quality packs for multiple vehicle types.</p>
+                        <p class="card-desc">Collection of high-quality packs for multiple vehicle types and cars.</p>
                         <div class="btn-group">
                             <button class="btn-detail" onclick="openModal('Vehicles Resource Packs', 'Add-on', 'https://link-hub.net/1461516/K3e4WD7WwuPt')">Details</button>
                         </div>
@@ -108,7 +175,7 @@
                     <div class="card-info">
                         <span class="tag tag-addon">ADD-ON</span>
                         <h3>100 Structures 2.0</h3>
-                        <p class="card-desc">Spawn over 100 new structures automatically.</p>
+                        <p class="card-desc">Spawn over 100 new structures automatically throughout your exploration.</p>
                         <div class="btn-group">
                             <button class="btn-detail" onclick="openModal('100 Structures 2.0', 'Add-on', 'https://direct-link.net/1461516/EyKLFrLv3Oro')">Details</button>
                         </div>
@@ -119,7 +186,7 @@
                     <div class="card-info">
                         <span class="tag tag-addon">ADD-ON</span>
                         <h3>Furniture Craftable</h3>
-                        <p class="card-desc">Craft modern furniture items directly in survival.</p>
+                        <p class="card-desc">Craft modern furniture items directly in your survival world using recipes.</p>
                         <div class="btn-group">
                             <button class="btn-detail" onclick="openModal('Furniture Craftable', 'Add-on', 'https://link-target.net/1461516/tmGwPxXDw2Ud')">Details</button>
                         </div>
@@ -130,7 +197,7 @@
                     <div class="card-info">
                         <span class="tag tag-addon">ADD-ON</span>
                         <h3>Security Addon</h3>
-                        <p class="card-desc">Advanced security systems for base protection.</p>
+                        <p class="card-desc">Advanced security systems, cameras, and laser grids for base protection.</p>
                         <div class="btn-group">
                             <button class="btn-detail" onclick="openModal('Security Addon', 'Add-on', 'https://link-hub.net/1461516/3xNlWdCeDeTt')">Details</button>
                         </div>
@@ -141,7 +208,7 @@
                     <div class="card-info">
                         <span class="tag tag-addon">ADD-ON</span>
                         <h3>TrueRealism HD</h3>
-                        <p class="card-desc">Realistic textures and environmental visuals.</p>
+                        <p class="card-desc">Realistic textures and environmental visuals for a lifelike experience.</p>
                         <div class="btn-group">
                             <button class="btn-detail" onclick="openModal('TrueRealism HD', 'Add-on', 'https://link-center.net/1461516/HxtT3yYdUomd')">Details</button>
                         </div>
@@ -152,7 +219,7 @@
                     <div class="card-info">
                         <span class="tag tag-addon">ADD-ON</span>
                         <h3>Furniture Addon</h3>
-                        <p class="card-desc">Modern furniture and interior decorations.</p>
+                        <p class="card-desc">Massive collection of modern furniture and interior decorations.</p>
                         <div class="btn-group">
                             <button class="btn-detail" onclick="openModal('Furniture Addon', 'Add-on', 'https://link-target.net/1461516/ab1fCe914Gq7')">Details</button>
                         </div>
@@ -163,7 +230,7 @@
                     <div class="card-info">
                         <span class="tag tag-addon">ADD-ON</span>
                         <h3>NPC The Ringmaster</h3>
-                        <p class="card-desc">Unique NPCs and story elements.</p>
+                        <p class="card-desc">Unique NPCs with story elements and custom trading options.</p>
                         <div class="btn-group">
                             <button class="btn-detail" onclick="openModal('NPC The Ringmaster', 'Add-on', 'https://direct-link.net/1461516/kGhXD9JwaK4A')">Details</button>
                         </div>
@@ -174,7 +241,7 @@
                     <div class="card-info">
                         <span class="tag tag-addon">ADD-ON</span>
                         <h3>Craftable Modern Bases</h3>
-                        <p class="card-desc">Build high-tech survival bases with new recipes.</p>
+                        <p class="card-desc">Build high-tech survival bases easily with new craftable blueprints.</p>
                         <div class="btn-group">
                             <button class="btn-detail" onclick="openModal('Craftable Modern Bases', 'Add-on', 'https://direct-link.net/1461516/1FWdT7CutPB2')">Details</button>
                         </div>
@@ -185,7 +252,7 @@
                     <div class="card-info">
                         <span class="tag tag-addon">ADD-ON</span>
                         <h3>Scary Mobs Addon</h3>
-                        <p class="card-desc">Terrifying new creatures and horror challenges.</p>
+                        <p class="card-desc">Terrifying new creatures and enhanced horror challenges at night.</p>
                         <div class="btn-group">
                             <button class="btn-detail" onclick="openModal('Scary Mobs Addon', 'Add-on', 'https://link-center.net/1461516/k9RYsjnpymHo')">Details</button>
                         </div>
@@ -196,7 +263,7 @@
                     <div class="card-info">
                         <span class="tag tag-addon">ADD-ON</span>
                         <h3>Cars Addon</h3>
-                        <p class="card-desc">Drivable vehicles and luxury cars.</p>
+                        <p class="card-desc">Drivable luxury vehicles, sports cars, and daily commuters.</p>
                         <div class="btn-group">
                             <button class="btn-detail" onclick="openModal('Cars Addon', 'Add-on', 'https://link-center.net/1461516/87v5YADQIK2c')">Details</button>
                         </div>
@@ -207,7 +274,7 @@
                     <div class="card-info">
                         <span class="tag tag-shader" style="background: #e67e22;">SHADER</span>
                         <h3>Mirai Shader</h3>
-                        <p class="card-desc">Stunning visuals optimized for mobile devices.</p>
+                        <p class="card-desc">Stunning lighting and atmosphere optimized for mobile devices.</p>
                         <div class="btn-group">
                             <button class="btn-detail" onclick="openModal('Mirai Shader', 'Shader', 'https://link-center.net/1461516/5k6DUYrNRVmf')">Supports only android</button>
                         </div>
@@ -218,7 +285,7 @@
                     <div class="card-info">
                         <span class="tag tag-shader" style="background: #e67e22;">SHADER</span>
                         <h3>Revolution Vibrant</h3>
-                        <p class="card-desc">Maximum saturation and vibrant visuals.</p>
+                        <p class="card-desc">Maximum color saturation and vibrant environmental visuals.</p>
                         <div class="btn-group">
                             <button class="btn-detail" onclick="openModal('Revolution Vibrant Visual', 'Shader', 'https://link-center.net/1461516/dJkRCWHDKsZU')">Details</button>
                         </div>
@@ -229,7 +296,7 @@
                     <div class="card-info">
                         <span class="tag tag-shader" style="background: #e67e22;">SHADER</span>
                         <h3>Prizma Visual</h3>
-                        <p class="card-desc">Vibrant colors and enhanced lighting effects.</p>
+                        <p class="card-desc">Vibrant colors and enhanced dynamic lighting effects.</p>
                         <div class="btn-group">
                             <button class="btn-detail" onclick="openModal('Prizma Visual', 'Shader', 'https://direct-link.net/1461516/ICndI6a3aBlu')">Details</button>
                         </div>
@@ -240,7 +307,7 @@
                     <div class="card-info">
                         <span class="tag tag-shader" style="background: #e67e22;">SHADER</span>
                         <h3>Luminous Dream</h3>
-                        <p class="card-desc">Dreamy aesthetic with soft lighting.</p>
+                        <p class="card-desc">A soft, dreamy aesthetic with glowing light sources.</p>
                         <div class="btn-group">
                             <button class="btn-detail" onclick="openModal('Luminous Dream', 'Shader', 'https://link-hub.net/1461516/WbNbgo6VFlgs')">Details</button>
                         </div>
@@ -251,7 +318,7 @@
                     <div class="card-info">
                         <span class="tag tag-shader" style="background: #e67e22;">SHADER</span>
                         <h3>Solace V</h3>
-                        <p class="card-desc">Realistic sun and water for high-end devices.</p>
+                        <p class="card-desc">Realistic sun, shadows, and water for high-performance devices.</p>
                         <div class="btn-group">
                             <button class="btn-detail" onclick="openModal('Solace V', 'Shader', 'https://link-target.net/1461516/x80Mu5CMkTJq')">Details</button>
                         </div>
@@ -262,7 +329,7 @@
                     <div class="card-info">
                         <span class="tag tag-shader" style="background: #e67e22;">SHADER</span>
                         <h3>Vanilla Reforged</h3>
-                        <p class="card-desc">Classic style with modern shader tech.</p>
+                        <p class="card-desc">Preserves the classic Minecraft look with modern lighting tech.</p>
                         <div class="btn-group">
                             <button class="btn-detail" onclick="openModal('Vanilla Reforged', 'Shader', 'https://direct-link.net/1461516/jRWCRfiZJEO0')">Details</button>
                         </div>
@@ -278,46 +345,98 @@
             <span class="close-btn" onclick="closeModal()">&times;</span>
             <h2 id="modalTitle">File Name</h2>
             <p id="modalCategory" style="color: #2ecc71; margin: 10px 0;">Category</p>
-            <div class="modal-body-text"><p>Click the button below to get the download link.</p></div>
-            <a id="scriptLink" href="#" target="_blank" class="get-script-btn rgb-animate" style="text-decoration: none; display: block; text-align: center; padding: 15px; background: #2ecc71; color: white; border-radius: 8px; margin-top: 20px; font-weight: bold; font-family: 'Kanit', sans-serif;">
+            <div class="modal-body-text">
+                <p>You are about to be redirected to the download link. Thank you for supporting Star MCBE!</p>
+                <p style="font-size: 0.8em; color: #888; margin-top: 10px;">Note: If the link doesn't open, please check your pop-up blocker.</p>
+            </div>
+            <a id="scriptLink" href="#" target="_blank" class="get-script-btn rgb-animate" style="text-decoration: none; display: block; text-align: center; padding: 15px; background: #2ecc71; color: white; border-radius: 8px; margin-top: 20px; font-weight: bold; font-family: 'Kanit', sans-serif; transition: transform 0.2s;">
                 <i class="fas fa-download"></i> GET DOWNLOAD LINK
             </a>
         </div>
     </div>
 
     <script>
+        /**
+         * Function to open modal and populate data
+         */
         function openModal(name, cat, link) {
-            document.getElementById('modalTitle').innerText = name;
-            document.getElementById('modalCategory').innerText = cat;
-            document.getElementById('scriptLink').href = link;
-            document.getElementById('scriptModal').style.display = "block";
+            const modal = document.getElementById('scriptModal');
+            const title = document.getElementById('modalTitle');
+            const category = document.getElementById('modalCategory');
+            const downloadBtn = document.getElementById('scriptLink');
+            
+            title.innerText = name;
+            category.innerText = cat;
+            downloadBtn.href = link;
+            
+            modal.style.display = "flex"; // Changed to flex for better centering
         }
 
+        /**
+         * Function to close modal
+         */
         function closeModal() {
             document.getElementById('scriptModal').style.display = "none";
         }
 
+        /**
+         * Function to filter content by category
+         */
         function filterScripts(category, element) {
-            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+            // Update Active State in Sidebar
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => item.classList.remove('active'));
             element.classList.add('active');
-            let cards = document.querySelectorAll('.card');
+
+            // Filter Cards
+            const cards = document.querySelectorAll('.card');
             cards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
+                const cardCat = card.getAttribute('data-category');
+                if (category === 'all' || cardCat === category) {
                     card.style.display = 'block';
+                    // Optional: Add entry animation
+                    card.style.animation = 'fadeIn 0.5s ease forwards';
                 } else {
                     card.style.display = 'none';
                 }
             });
         }
 
+        /**
+         * Live Search Functionality
+         */
         document.getElementById('searchInput').addEventListener('input', function(e) {
-            let term = e.target.value.toLowerCase();
-            let cards = document.querySelectorAll('.card');
+            const term = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+            
             cards.forEach(card => {
-                let name = card.querySelector('h3').innerText.toLowerCase();
-                card.style.display = name.includes(term) ? 'block' : 'none';
+                const title = card.querySelector('h3').innerText.toLowerCase();
+                const desc = card.querySelector('.card-desc').innerText.toLowerCase();
+                
+                if (title.includes(term) || desc.includes(term)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
             });
         });
+
+        /**
+         * Close modal when clicking outside of it
+         */
+        window.onclick = function(event) {
+            const modal = document.getElementById('scriptModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        /**
+         * Placeholder for gallery update if needed
+         */
+        function updateGallery() {
+            console.log("Star MCBE Hub Loaded Successfully");
+        }
     </script>
 </body>
 </html>
