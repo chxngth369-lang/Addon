@@ -61,6 +61,17 @@
 
             <div class="grid" id="scriptGrid">
                 
+                <div class="card" data-category="patch">
+                    <div class="card-info">
+                        <span class="tag tag-patch" style="background: #9b59b6; border: 1px solid #fff;">LATEST PATCH</span>
+                        <h3>Minecraft patch 1.26.13.1</h3>
+                        <p class="card-desc">อัปเดตล่าสุดที่จำเป็นสำหรับการเล่น Minecraft Bedrock Edition บน Android</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Minecraft patch 1.26.13.1', 'Minecraft Patch', 'https://link-center.net/1461516/7qMkNpnhYRLr')">Support only android</button>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="card" data-category="texture">
                     <div class="card-info">
                         <span class="tag tag-texture" style="background: #3498db;">TEXTURE</span>
@@ -112,17 +123,6 @@
                         <p class="card-desc">Hyper-realistic modern architecture and sleek material textures.</p>
                         <div class="btn-group">
                             <button class="btn-detail" onclick="openModal('Modernarch 128x128', 'Texture Pack', 'https://link-center.net/1461516/wwe0ngyqAJQ2')">Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" data-category="patch">
-                    <div class="card-info">
-                        <span class="tag tag-patch" style="background: #9b59b6;">PATCH</span>
-                        <h3>Minecraft patch 1.26.13.1</h3>
-                        <p class="card-desc">Latest essential updates and fixes for Minecraft Bedrock Edition.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Minecraft patch 1.26.13.1', 'Minecraft Patch', 'https://link-center.net/1461516/7qMkNpnhYRLr')">Support only android</button>
                         </div>
                     </div>
                 </div>
@@ -369,7 +369,7 @@
             category.innerText = cat;
             downloadBtn.href = link;
             
-            modal.style.display = "flex"; // Changed to flex for better centering
+            modal.style.display = "flex"; 
         }
 
         /**
@@ -394,7 +394,6 @@
                 const cardCat = card.getAttribute('data-category');
                 if (category === 'all' || cardCat === category) {
                     card.style.display = 'block';
-                    // Optional: Add entry animation
                     card.style.animation = 'fadeIn 0.5s ease forwards';
                 } else {
                     card.style.display = 'none';
@@ -432,10 +431,10 @@
         }
 
         /**
-         * Placeholder for gallery update if needed
+         * Placeholder for initialization
          */
         function updateGallery() {
-            console.log("Star MCBE Hub Loaded Successfully");
+            console.log("Star MCBE Hub Loaded - Patch at top priority");
         }
     </script>
 </body>
