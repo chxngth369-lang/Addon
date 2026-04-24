@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star MCBE | Add-ons Hub Ultimate Night</title>
+    <title>Star MCBE | The Ultimate Hub 2026</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
         /* ========================================
-           [1] ANIMATED STARRY BACKGROUND (ระบบดาว)
-           ========================================
-        */
+           [1] ANIMATED STAR SYSTEM (ระบบดาวตก)
+           ======================================== */
         .bg-wrapper {
             position: fixed;
             top: 0;
@@ -54,42 +53,29 @@
             animation: shining 3000ms ease-in-out infinite;
         }
 
-        .shooting_star::after {
-            transform: translateX(50%) rotateZ(-45deg);
-        }
+        .shooting_star::after { transform: translateX(50%) rotateZ(-45deg); }
 
-        /* ดาวตกหลายดวง */
+        /* การตั้งค่าตำแหน่งดาวตกทุกลูก */
         .shooting_star:nth-child(1) { top: calc(50% - 185px); left: calc(50% - 150px); animation-delay: 100ms; }
         .shooting_star:nth-child(2) { top: calc(50% - 50px); left: calc(50% - 190px); animation-delay: 300ms; }
         .shooting_star:nth-child(3) { top: calc(50% - 10px); left: calc(50% - 250px); animation-delay: 500ms; }
         .shooting_star:nth-child(4) { top: calc(50% - 150px); left: calc(50% - 50px); animation-delay: 700ms; }
         .shooting_star:nth-child(5) { top: calc(50% - 200px); left: calc(50% - 280px); animation-delay: 900ms; }
+        .shooting_star:nth-child(6) { top: calc(50% - 20px); left: calc(50% - 100px); animation-delay: 1200ms; }
+        .shooting_star:nth-child(7) { top: calc(50% - 100px); left: calc(50% - 300px); animation-delay: 1500ms; }
 
-        @keyframes tail {
-            0% { width: 0; }
-            30% { width: 100px; }
-            100% { width: 0; }
-        }
-
-        @keyframes shining {
-            0% { width: 0; }
-            50% { width: 30px; }
-            100% { width: 0; }
-        }
-
-        @keyframes shooting {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(300px); }
-        }
+        @keyframes tail { 0% { width: 0; } 30% { width: 100px; } 100% { width: 0; } }
+        @keyframes shining { 0% { width: 0; } 50% { width: 30px; } 100% { width: 0; } }
+        @keyframes shooting { 0% { transform: translateX(0); } 100% { transform: translateX(300px); } }
 
         /* ========================================
-           [2] BASE STYLES
-           ========================================
-        */
+           [2] CORE UI DESIGN
+           ======================================== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --primary: #3498db;
-            --secondary: #2ecc71;
+            --danger: #e74c3c;
+            --success: #2ecc71;
             --card-bg: rgba(255, 255, 255, 0.05);
         }
 
@@ -102,156 +88,165 @@
 
         .app-container { display: flex; min-height: 100vh; }
 
-        /* Sidebar */
+        /* Sidebar Navigation */
         .sidebar {
             width: 280px;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(15px);
-            padding: 30px 20px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(20px);
+            padding: 35px 20px;
             border-right: 1px solid rgba(255, 255, 255, 0.1);
             position: sticky;
             top: 0;
             height: 100vh;
+            z-index: 100;
         }
 
         .logo {
             font-size: 26px;
             font-weight: 600;
-            margin-bottom: 50px;
-            text-align: center;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
             text-shadow: 0 0 15px var(--primary);
         }
 
         .nav-item {
-            padding: 14px 18px;
-            margin-bottom: 10px;
+            padding: 15px 20px;
+            margin-bottom: 12px;
             border-radius: 12px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: 0.4s;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
             color: #bdc3c7;
         }
 
         .nav-item:hover, .nav-item.active {
             background: var(--primary);
             color: #fff;
-            transform: translateX(5px);
+            transform: translateX(8px);
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
         }
 
         /* Main Content */
-        .main-content { flex: 1; padding: 50px; }
+        .main-content { flex: 1; padding: 60px; }
         .neon-text {
             font-size: 3.5rem;
-            margin-bottom: 20px;
-            background: linear-gradient(45deg, #fff, var(--primary));
+            font-weight: 600;
+            background: linear-gradient(to right, #fff, var(--primary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
         }
 
-        .search-container {
+        .search-wrapper {
             position: relative;
             max-width: 600px;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
-        .search-container input {
+        .search-wrapper input {
             width: 100%;
-            padding: 18px 25px 18px 55px;
-            border-radius: 35px;
+            padding: 20px 25px 20px 60px;
+            border-radius: 40px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             background: rgba(255, 255, 255, 0.05);
             color: white;
+            font-size: 16px;
             outline: none;
+            transition: 0.3s;
         }
 
-        .search-container i {
-            position: absolute;
-            left: 22px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #7f8c8d;
-        }
+        .search-wrapper i { position: absolute; left: 25px; top: 50%; transform: translateY(-50%); color: #7f8c8d; }
 
-        /* Grid & Cards */
-        .grid-layout {
+        /* Grid System */
+        .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 30px;
         }
 
-        .card-item {
+        .card-node {
             background: var(--card-bg);
-            border-radius: 20px;
+            border-radius: 24px;
             border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: 0.4s;
+            transition: 0.5s;
             overflow: hidden;
             display: flex;
             flex-direction: column;
         }
 
-        .card-item:hover {
-            transform: translateY(-10px);
+        .card-node:hover {
+            transform: translateY(-15px);
             border-color: var(--primary);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
         }
 
-        .card-body { padding: 25px; }
-
-        .tag-label {
+        .card-inner { padding: 30px; }
+        
+        .tag {
             font-size: 10px;
-            padding: 5px 12px;
-            border-radius: 6px;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 8px;
             text-transform: uppercase;
             display: inline-block;
-            margin-bottom: 15px;
-            font-weight: bold;
+            margin-bottom: 20px;
         }
 
-        .btn-action {
+        .card-node h3 { font-size: 20px; margin-bottom: 15px; }
+        .card-node p { font-size: 14px; color: #bdc3c7; height: 45px; overflow: hidden; margin-bottom: 25px; }
+
+        .btn-main {
             width: 100%;
-            padding: 14px;
-            border-radius: 10px;
+            padding: 15px;
+            border-radius: 14px;
             border: none;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.07);
             color: white;
             font-weight: 600;
             cursor: pointer;
-            margin-top: 15px;
+            transition: 0.3s;
         }
 
-        .btn-action:hover { background: var(--primary); }
+        .btn-main:hover { background: var(--primary); transform: scale(1.02); }
 
-        /* Modal */
+        /* Support Android Alert Style */
+        .btn-android { background: rgba(155, 89, 182, 0.2) !important; color: #d499ff !important; border: 1px solid #9b59b6 !important; }
+        .btn-android:hover { background: #9b59b6 !important; color: white !important; }
+
+        /* Modal Popup */
         .modal-overlay {
             display: none;
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9);
-            z-index: 10000;
+            background: rgba(0,0,0,0.95);
+            z-index: 1000;
             justify-content: center; align-items: center;
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
         }
 
         .modal-box {
-            background: #16213e;
-            padding: 40px;
-            border-radius: 25px;
+            background: #111;
+            padding: 50px;
+            border-radius: 30px;
             text-align: center;
             border: 1px solid var(--primary);
-            width: 90%; max-width: 450px;
+            width: 90%; max-width: 500px;
         }
 
-        .download-btn {
+        .get-btn {
             display: block;
-            background: var(--secondary);
+            background: var(--success);
             color: white;
             text-decoration: none;
-            padding: 18px;
-            border-radius: 12px;
+            padding: 20px;
+            border-radius: 15px;
             font-weight: bold;
-            margin-top: 25px;
+            margin-top: 30px;
+            font-size: 18px;
         }
     </style>
 </head>
@@ -259,10 +254,9 @@
 
     <div class="bg-wrapper">
         <div class="night">
-            <div class="shooting_star"></div>
-            <div class="shooting_star"></div>
-            <div class="shooting_star"></div>
-            <div class="shooting_star"></div>
+            <div class="shooting_star"></div><div class="shooting_star"></div>
+            <div class="shooting_star"></div><div class="shooting_star"></div>
+            <div class="shooting_star"></div><div class="shooting_star"></div>
             <div class="shooting_star"></div>
         </div>
     </div>
@@ -271,13 +265,13 @@
         <aside class="sidebar">
             <div class="logo"><i class="fab fa-tiktok"></i> Star MCBE</div>
             <nav>
-                <p class="nav-title">Categories</p>
-                <ul class="nav-list">
-                    <li class="nav-item active" data-cat="all" onclick="filterScripts('all', this)"><i class="fas fa-th-large"></i> All Content</li>
-                    <li class="nav-item" data-cat="patch" onclick="filterScripts('patch', this)"><i class="fas fa-tools"></i> Patch</li>
-                    <li class="nav-item" data-cat="addon" onclick="filterScripts('addon', this)"><i class="fas fa-plus-square"></i> Add-ons</li>
-                    <li class="nav-item" data-cat="world" onclick="filterScripts('world', this)"><i class="fas fa-globe-americas"></i> Worlds</li>
-                    <li class="nav-item" data-cat="texture" onclick="filterScripts('texture', this)"><i class="fas fa-images"></i> Textures</li>
+                <p style="font-size: 11px; color:#555; letter-spacing:2px; margin-bottom:20px;">CATEGORIES</p>
+                <ul>
+                    <li class="nav-item active" data-cat="all" onclick="filterScripts('all', this)"><i class="fas fa-layer-group"></i> All Content</li>
+                    <li class="nav-item" data-cat="patch" onclick="filterScripts('patch', this)"><i class="fas fa-tools"></i> Patches</li>
+                    <li class="nav-item" data-cat="addon" onclick="filterScripts('addon', this)"><i class="fas fa-plus-circle"></i> Add-ons</li>
+                    <li class="nav-item" data-cat="world" onclick="filterScripts('world', this)"><i class="fas fa-globe-asia"></i> Worlds</li>
+                    <li class="nav-item" data-cat="texture" onclick="filterScripts('texture', this)"><i class="fas fa-image"></i> Textures</li>
                     <li class="nav-item" data-cat="shader" onclick="filterScripts('shader', this)"><i class="fas fa-magic"></i> Shaders</li>
                 </ul>
             </nav>
@@ -285,93 +279,120 @@
 
         <main class="main-content">
             <header>
-                <h1 class="neon-text">Star MCBE Collection</h1>
-                <div class="search-container">
+                <h1 class="neon-text">Star MCBE Hub</h1>
+                <div class="search-wrapper">
                     <i class="fas fa-search"></i>
-                    <input type="text" id="searchInput" placeholder="ค้นหา Add-ons หรือ Worlds...">
+                    <input type="text" id="searchInput" placeholder="Search for content...">
                 </div>
             </header>
 
-            <div class="grid-layout" id="scriptGrid">
+            <div class="grid-container" id="scriptGrid">
                 
-                <div class="card-item" data-category="patch">
-                    <div class="card-body">
-                        <span class="tag-label" style="background:#9b59b6">PATCH</span>
+                <div class="card-node" data-category="patch">
+                    <div class="card-inner">
+                        <span class="tag" style="background:#9b59b6">PATCH</span>
                         <h3>Minecraft patch 1.26.13.1</h3>
-                        <p>Latest essential updates and critical fixes for Android.</p>
-                        <button class="btn-action" onclick="openModal('Minecraft patch 1.26.13.1', 'Patch', 'https://link-center.net/1461516/7qMkNpnhYRLr')">Download</button>
+                        <p>Essential update for Android players with latest fixes.</p>
+                        <button class="btn-main btn-android" onclick="openModal('Minecraft patch 1.26.13.1', 'Patch', 'https://link-center.net/1461516/7qMkNpnhYRLr')">Support only android</button>
                     </div>
                 </div>
 
-                <div class="card-item" data-category="world">
-                    <div class="card-body">
-                        <span class="tag-label" style="background:#27ae60">WORLD</span>
+                <div class="card-node" data-category="world">
+                    <div class="card-inner">
+                        <span class="tag" style="background:#27ae60">WORLD</span>
                         <h3>Millionaire Horror Mansion</h3>
-                        <p>คฤหาสน์หรูสุดสยองขวัญที่รอการสำรวจ</p>
-                        <button class="btn-action" onclick="openModal('Millionaire Horror Mansion', 'World', 'https://direct-link.net/1461516/KYRoc6kVg301')">Details</button>
+                        <p>A scary exploration in a rich millionaire's house.</p>
+                        <button class="btn-main" onclick="openModal('Millionaire Horror Mansion', 'World', 'https://direct-link.net/1461516/KYRoc6kVg301')">Details</button>
                     </div>
                 </div>
 
-                <div class="card-item" data-category="world">
-                    <div class="card-body">
-                        <span class="tag-label" style="background:#27ae60">WORLD</span>
+                <div class="card-node" data-category="world">
+                    <div class="card-inner">
+                        <span class="tag" style="background:#27ae60">WORLD</span>
                         <h3>Moon Bunker</h3>
-                        <p>ฐานทัพลับบนดวงจันทร์เพื่อการเอาชีวิตรอด</p>
-                        <button class="btn-action" onclick="openModal('Moon Bunker', 'World', 'https://link-target.net/1461516/32pU0vlAKmOP')">Details</button>
+                        <p>A safe haven built deep inside the lunar surface.</p>
+                        <button class="btn-main" onclick="openModal('Moon Bunker', 'World', 'https://link-target.net/1461516/32pU0vlAKmOP')">Details</button>
                     </div>
                 </div>
 
-                <div class="card-item" data-category="addon">
-                    <div class="card-body">
-                        <span class="tag-label" style="background:#e74c3c">ADD-ON</span>
+                <div class="card-node" data-category="addon">
+                    <div class="card-inner">
+                        <span class="tag" style="background:#e74c3c">ADD-ON</span>
                         <h3>Blaster Gun Addon</h3>
-                        <p>อาวุธเลเซอร์ล้ำยุคสำหรับการต่อสู้สุดมันส์</p>
-                        <button class="btn-action" onclick="openModal('Blaster Gun Addon', 'Add-on', 'https://link-hub.net/1461516/E1nQFw3vge2N')">Details</button>
+                        <p>Futuristic laser weapons for heavy combat missions.</p>
+                        <button class="btn-main" onclick="openModal('Blaster Gun Addon', 'Add-on', 'https://link-hub.net/1461516/E1nQFw3vge2N')">Details</button>
                     </div>
                 </div>
 
-                <div class="card-item" data-category="addon">
-                    <div class="card-body">
-                        <span class="tag-label" style="background:#e74c3c">ADD-ON</span>
+                <div class="card-node" data-category="addon">
+                    <div class="card-inner">
+                        <span class="tag" style="background:#e74c3c">ADD-ON</span>
                         <h3>Meme Weapons Addon</h3>
-                        <p>อาวุธสุดกวนที่มีพลังทำลายล้างมหาศาล</p>
-                        <button class="btn-action" onclick="openModal('Meme Weapons Addon', 'Add-on', 'https://link-target.net/1461516/c3CAIZUxBLz9')">Details</button>
+                        <p>Crazy and funny weapons to prank your friends.</p>
+                        <button class="btn-main" onclick="openModal('Meme Weapons Addon', 'Add-on', 'https://link-target.net/1461516/c3CAIZUxBLz9')">Details</button>
                     </div>
                 </div>
 
-                <div class="card-item" data-category="addon">
-                    <div class="card-body">
-                        <span class="tag-label" style="background:#e74c3c">ADD-ON</span>
+                <div class="card-node" data-category="addon">
+                    <div class="card-inner">
+                        <span class="tag" style="background:#e74c3c">ADD-ON</span>
                         <h3>Realistic Biomes</h3>
-                        <p>ระบบนิเวศน์ที่สมจริงและธรรมชาติที่สวยงาม</p>
-                        <button class="btn-action" onclick="openModal('Realistic Biomes', 'Add-on', 'https://link-target.net/1461516/eLP5kGzyp8EU')">Details</button>
+                        <p>Transform your world into a hyper-realistic nature.</p>
+                        <button class="btn-main" onclick="openModal('Realistic Biomes', 'Add-on', 'https://link-target.net/1461516/eLP5kGzyp8EU')">Details</button>
                     </div>
                 </div>
 
-                <div class="card-item" data-category="addon">
-                    <div class="card-body">
-                        <span class="tag-label" style="background:#e74c3c">ADD-ON</span>
+                <div class="card-node" data-category="addon">
+                    <div class="card-inner">
+                        <span class="tag" style="background:#e74c3c">ADD-ON</span>
                         <h3>Realistic Train</h3>
-                        <p>รถไฟความเร็วสูงที่มีรายละเอียดสมจริงที่สุด</p>
-                        <button class="btn-action" onclick="openModal('Realistic Train', 'Add-on', 'https://direct-link.net/1461516/1RZBem6eCy2N')">Details</button>
+                        <p>Advanced train system with realistic physics.</p>
+                        <button class="btn-main" onclick="openModal('Realistic Train', 'Add-on', 'https://direct-link.net/1461516/1RZBem6eCy2N')">Details</button>
                     </div>
                 </div>
 
-                <div class="card-item" data-category="texture">
-                    <div class="card-body">
-                        <span class="tag-label" style="background:#3498db">TEXTURE</span>
+                <div class="card-node" data-category="addon">
+                    <div class="card-inner">
+                        <span class="tag" style="background:#e74c3c">ADD-ON</span>
+                        <h3>Action and Stuff</h3>
+                        <p>The best player animation pack for MCBE.</p>
+                        <button class="btn-main" onclick="openModal('Action and Stuff', 'Add-on', 'https://link-target.net/1461516/a8BRC3RJIxvf')">Details</button>
+                    </div>
+                </div>
+
+                <div class="card-node" data-category="texture">
+                    <div class="card-inner">
+                        <span class="tag" style="background:#3498db">TEXTURE</span>
                         <h3>Patrix 128x128</h3>
-                        <p>Ultra HD realistic textures pack.</p>
-                        <button class="btn-action" onclick="openModal('Patrix 128x128', 'Texture', 'https://link-target.net/1461516/qjleiAxt06')">Details</button>
+                        <p>Ultimate HD realism textures for high-end phones.</p>
+                        <button class="btn-main" onclick="openModal('Patrix 128x128', 'Texture', 'https://link-target.net/1461516/qjleiAxt06')">Details</button>
                     </div>
                 </div>
 
-                <div class="card-item" data-category="shader">
-                    <div class="card-body">
-                        <span class="tag-label" style="background:#f39c12">SHADER</span>
+                <div class="card-node" data-category="shader">
+                    <div class="card-inner">
+                        <span class="tag" style="background:#f39c12">SHADER</span>
                         <h3>Solace V</h3>
-                        <p>High-end water and sky visuals.</p>
-                        <button class="btn-action" onclick="openModal('Solace V', 'Shader', 'https://link-target.net/1461516/x80Mu5CMkTJq')">Details</button>
+                        <p>Realistic water reflection and cloud systems.</p>
+                        <button class="btn-main" onclick="openModal('Solace V', 'Shader', 'https://link-target.net/1461516/x80Mu5CMkTJq')">Details</button>
+                    </div>
+                </div>
+
+                <div class="card-node" data-category="addon">
+                    <div class="card-inner">
+                        <span class="tag" style="background:#e74c3c">ADD-ON</span>
+                        <h3>SCP Uncaged</h3>
+                        <p>Encounter SCP-096 and more monsters in your world.</p>
+                        <button class="btn-main" onclick="openModal('SCP Uncaged', 'Add-on', 'https://link-center.net/1461516/MCugHbWBjGlp')">Details</button>
+                    </div>
+                </div>
+
+                <div class="card-node" data-category="texture">
+                    <div class="card-inner">
+                        <span class="tag" style="background:#3498db">TEXTURE</span>
+                        <h3>Scatter Grass</h3>
+                        <p>Realistic 3D grass textures for your land.</p>
+                        <button class="btn-main" onclick="openModal('Scatter Grass', 'Texture', 'https://direct-link.net/1461516/TdE8pZpBWfVH')">Details</button>
                     </div>
                 </div>
 
@@ -381,10 +402,11 @@
 
     <div id="scriptModal" class="modal-overlay">
         <div class="modal-box">
-            <h2 id="modalTitle"></h2>
-            <div id="modalCategory" style="color:#2ecc71; margin: 10px 0;"></div>
-            <a id="scriptLink" href="#" target="_blank" class="download-btn">DOWNLOAD LINK</a>
-            <p onclick="closeModal()" style="margin-top:20px; cursor:pointer; color:#888;">Close</p>
+            <h2 id="modalTitle" style="color:white; margin:0;"></h2>
+            <p id="modalCategory" style="color:var(--success); margin: 15px 0; font-weight:bold;"></p>
+            <p style="color:#888;">Please support us by visiting the link below.</p>
+            <a id="scriptLink" href="#" target="_blank" class="get-btn">GET DOWNLOAD LINK</a>
+            <p style="margin-top:25px; cursor:pointer; color:#555;" onclick="closeModal()">Back to Hub</p>
         </div>
     </div>
 
@@ -396,24 +418,31 @@
             document.getElementById('scriptModal').style.display = 'flex';
         }
         function closeModal() { document.getElementById('scriptModal').style.display = 'none'; }
+        
         function filterScripts(cat, el) {
             document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
             el.classList.add('active');
-            document.querySelectorAll('.card-item').forEach(card => {
-                card.style.display = (cat === 'all' || card.getAttribute('data-category') === cat) ? 'flex' : 'none';
+            document.querySelectorAll('.card-node').forEach(card => {
+                if (cat === 'all' || card.getAttribute('data-category') === cat) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
             });
         }
+
         document.getElementById('searchInput').addEventListener('input', (e) => {
             let val = e.target.value.toLowerCase();
-            document.querySelectorAll('.card-item').forEach(card => {
+            document.querySelectorAll('.card-node').forEach(card => {
                 let text = card.querySelector('h3').innerText.toLowerCase();
                 card.style.display = text.includes(val) ? 'flex' : 'none';
             });
         });
-        window.onclick = function(event) {
-            if (event.target == document.getElementById('scriptModal')) closeModal();
+
+        window.onclick = function(e) {
+            if (e.target == document.getElementById('scriptModal')) closeModal();
         }
-        function updateGallery() { console.log("Starry MCBE Loaded Successfully."); }
+        function updateGallery() { console.log("Star MCBE - 400+ Lines Version Ready."); }
     </script>
 </body>
 </html>
