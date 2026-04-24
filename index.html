@@ -7,18 +7,46 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* สรุป CSS หลักเพื่อให้ไฟล์เดียวรันได้ทันที */
+        :root { --primary: #3498db; --bg: #0f0c29; --card-bg: rgba(255,255,255,0.05); }
+        body { font-family: 'Kanit', sans-serif; background: var(--bg); color: white; margin: 0; overflow-x: hidden; }
+        .app-container { display: flex; min-height: 100vh; }
+        
+        /* Sidebar */
+        .sidebar { width: 260px; background: rgba(0,0,0,0.3); backdrop-filter: blur(10px); padding: 20px; border-right: 1px solid rgba(255,255,255,0.1); }
+        .logo { font-size: 24px; font-weight: bold; margin-bottom: 40px; color: #fff; text-shadow: 0 0 10px var(--primary); }
+        .nav-title { font-size: 12px; color: #888; letter-spacing: 2px; margin-bottom: 15px; }
+        ul { list-style: none; padding: 0; }
+        .nav-item { padding: 12px; margin-bottom: 8px; border-radius: 8px; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 10px; }
+        .nav-item:hover, .nav-item.active { background: var(--primary); color: white; }
+
+        /* Main Content */
+        .main-content { flex: 1; padding: 40px; }
+        .neon-text { font-size: 3rem; margin-top: 0; text-transform: uppercase; background: linear-gradient(to right, #fff, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .search-bar { position: relative; margin-bottom: 40px; max-width: 500px; }
+        .search-bar input { width: 100%; padding: 15px 45px; border-radius: 30px; border: none; background: rgba(255,255,255,0.1); color: white; outline: none; border: 1px solid rgba(255,255,255,0.1); }
+        .search-bar i { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #888; }
+
+        /* Grid & Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
+        .card { background: var(--card-bg); border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); overflow: hidden; transition: 0.4s; position: relative; }
+        .card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .card-info { padding: 20px; }
+        .tag { font-size: 10px; padding: 3px 8px; border-radius: 4px; font-weight: bold; margin-bottom: 10px; display: inline-block; }
+        .card h3 { margin: 10px 0; font-size: 18px; }
+        .card-desc { font-size: 13px; color: #ccc; line-height: 1.5; height: 40px; overflow: hidden; }
+        .btn-detail { width: 100%; padding: 12px; border-radius: 8px; border: none; background: rgba(255,255,255,0.1); color: white; cursor: pointer; transition: 0.3s; margin-top: 15px; font-weight: 600; }
+        .btn-detail:hover { background: var(--primary); }
+
+        /* Modal */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; justify-content: center; align-items: center; backdrop-filter: blur(5px); }
+        .modal-content { background: #16213e; padding: 40px; border-radius: 20px; width: 90%; max-width: 450px; text-align: center; border: 1px solid var(--primary); }
+        .get-script-btn { display: block; text-decoration: none; background: #2ecc71; color: white; padding: 15px; border-radius: 10px; font-weight: bold; margin-top: 25px; transition: 0.3s; }
+        .get-script-btn:hover { transform: scale(1.05); background: #27ae60; }
+    </style>
 </head>
 <body onload="updateGallery()">
-
-    <div class="bg-wrapper">
-        <div class="night">
-            <div class="shooting_star"></div><div class="shooting_star"></div>
-            <div class="shooting_star"></div><div class="shooting_star"></div>
-            <div class="shooting_star"></div><div class="shooting_star"></div>
-            <div class="shooting_star"></div><div class="shooting_star"></div>
-            <div class="shooting_star"></div><div class="shooting_star"></div>
-        </div>
-    </div>
 
     <div class="app-container">
         <aside class="sidebar">
@@ -26,21 +54,12 @@
             <nav>
                 <p class="nav-title">CATEGORIES</p>
                 <ul>
-                    <li class="nav-item active" data-cat="all" onclick="filterScripts('all', this)">
-                        <i class="fas fa-th-large"></i> All Content
-                    </li>
-                    <li class="nav-item" data-cat="addon" onclick="filterScripts('addon', this)">
-                        <i class="fas fa-plus-square"></i> Add-ons
-                    </li>
-                    <li class="nav-item" data-cat="texture" onclick="filterScripts('texture', this)">
-                        <i class="fas fa-images"></i> Texture Packs
-                    </li>
-                    <li class="nav-item" data-cat="shader" onclick="filterScripts('shader', this)">
-                        <i class="fas fa-magic"></i> Vibrant Shaders
-                    </li>
-                    <li class="nav-item" data-cat="patch" onclick="filterScripts('patch', this)">
-                        <i class="fas fa-tools"></i> Minecraft Patches
-                    </li>
+                    <li class="nav-item active" data-cat="all" onclick="filterScripts('all', this)"><i class="fas fa-th-large"></i> All Content</li>
+                    <li class="nav-item" data-cat="patch" onclick="filterScripts('patch', this)"><i class="fas fa-tools"></i> Patches</li>
+                    <li class="nav-item" data-cat="addon" onclick="filterScripts('addon', this)"><i class="fas fa-plus-square"></i> Add-ons</li>
+                    <li class="nav-item" data-cat="world" onclick="filterScripts('world', this)"><i class="fas fa-globe-americas"></i> Worlds</li>
+                    <li class="nav-item" data-cat="texture" onclick="filterScripts('texture', this)"><i class="fas fa-images"></i> Textures</li>
+                    <li class="nav-item" data-cat="shader" onclick="filterScripts('shader', this)"><i class="fas fa-magic"></i> Shaders</li>
                 </ul>
             </nav>
         </aside>
@@ -50,7 +69,7 @@
                 <h1 class="neon-text">Star MCBE Collection</h1>
                 <div class="search-bar">
                     <i class="fas fa-search"></i>
-                    <input type="text" id="searchInput" placeholder="Search for content...">
+                    <input type="text" id="searchInput" placeholder="Search for items...">
                 </div>
             </header>
 
@@ -58,276 +77,254 @@
                 
                 <div class="card" data-category="patch">
                     <div class="card-info">
-                        <span class="tag tag-patch" style="background: #9b59b6;">PATCH</span>
+                        <span class="tag" style="background:#9b59b6">PATCH</span>
                         <h3>Minecraft patch 1.26.13.1</h3>
-                        <p class="card-desc">Latest essential updates and critical fixes for Minecraft Bedrock Edition.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Minecraft patch 1.26.13.1', 'Minecraft Patch', 'https://link-center.net/1461516/7qMkNpnhYRLr')">Support only android</button>
-                        </div>
+                        <p class="card-desc">Latest essential updates and fixes for Minecraft Bedrock Edition on Android.</p>
+                        <button class="btn-detail" onclick="openModal('Minecraft patch 1.26.13.1', 'Patch', 'https://link-center.net/1461516/7qMkNpnhYRLr')">Support only android</button>
                     </div>
                 </div>
 
-                <div class="card" data-category="texture">
+                <div class="card" data-category="world">
                     <div class="card-info">
-                        <span class="tag tag-texture" style="background: #3498db;">TEXTURE</span>
-                        <h3>Scatter Grass</h3>
-                        <p class="card-desc">Realistic grass density and beautiful natural scattering effects.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Scatter Grass', 'Texture Pack', 'https://direct-link.net/1461516/TdE8pZpBWfVH')">Details</button>
-                        </div>
+                        <span class="tag" style="background:#27ae60">WORLD</span>
+                        <h3>Millionaire Horror Mansion</h3>
+                        <p class="card-desc">Explore a luxury mansion with dark horror secrets.</p>
+                        <button class="btn-detail" onclick="openModal('Millionaire Horror Mansion', 'World', 'https://direct-link.net/1461516/KYRoc6kVg301')">Details</button>
                     </div>
                 </div>
-
-                <div class="card" data-category="texture">
+                <div class="card" data-category="world">
                     <div class="card-info">
-                        <span class="tag tag-texture" style="background: #3498db;">TEXTURE</span>
-                        <h3>Patrix 32x32</h3>
-                        <p class="card-desc">Professional optimized textures for a balanced Minecraft experience.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Patrix 32x32', 'Texture Pack', 'https://direct-link.net/1461516/d5KNdErq6n1V')">Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" data-category="texture">
-                    <div class="card-info">
-                        <span class="tag tag-texture" style="background: #3498db;">TEXTURE</span>
-                        <h3>Patrix 64x64</h3>
-                        <p class="card-desc">Enhanced visuals with high-resolution textures and great performance.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Patrix 64x64', 'Texture Pack', 'https://direct-link.net/1461516/TnbcUjP4jYfI')">Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" data-category="texture">
-                    <div class="card-info">
-                        <span class="tag tag-texture" style="background: #3498db;">TEXTURE</span>
-                        <h3>Patrix 128x128</h3>
-                        <p class="card-desc">Ultra-realistic texture pack designed for high-end mobile devices.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Patrix 128x128', 'Texture Pack', 'https://link-target.net/1461516/qjleiAxt06')">Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" data-category="texture">
-                    <div class="card-info">
-                        <span class="tag tag-texture" style="background: #3498db;">TEXTURE</span>
-                        <h3>Modernarch 128x128</h3>
-                        <p class="card-desc">Modern architectural textures for hyper-realistic builds.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Modernarch 128x128', 'Texture Pack', 'https://link-center.net/1461516/wwe0ngyqAJQ2')">Details</button>
-                        </div>
+                        <span class="tag" style="background:#27ae60">WORLD</span>
+                        <h3>Moon Bunker</h3>
+                        <p class="card-desc">Survival underground base located on the Moon.</p>
+                        <button class="btn-detail" onclick="openModal('Moon Bunker', 'World', 'https://link-target.net/1461516/32pU0vlAKmOP')">Details</button>
                     </div>
                 </div>
 
                 <div class="card" data-category="addon">
                     <div class="card-info">
-                        <span class="tag tag-addon">ADD-ON</span>
+                        <span class="tag" style="background:#e74c3c">ADD-ON</span>
+                        <h3>Realistic Train</h3>
+                        <p class="card-desc">Functional and highly detailed train system.</p>
+                        <button class="btn-detail" onclick="openModal('Realistic Train', 'Add-on', 'https://direct-link.net/1461516/1RZBem6eCy2N')">Details</button>
+                    </div>
+                </div>
+                <div class="card" data-category="addon">
+                    <div class="card-info">
+                        <span class="tag" style="background:#e74c3c">ADD-ON</span>
+                        <h3>Blaster Gun Addon</h3>
+                        <p class="card-desc">Futuristic blasters for advanced survival combat.</p>
+                        <button class="btn-detail" onclick="openModal('Blaster Gun Addon', 'Add-on', 'https://link-hub.net/1461516/E1nQFw3vge2N')">Details</button>
+                    </div>
+                </div>
+                <div class="card" data-category="addon">
+                    <div class="card-info">
+                        <span class="tag" style="background:#e74c3c">ADD-ON</span>
+                        <h3>Meme Weapons Addon</h3>
+                        <p class="card-desc">Crazy and funny weapons from internet memes.</p>
+                        <button class="btn-detail" onclick="openModal('Meme Weapons Addon', 'Add-on', 'https://link-target.net/1461516/c3CAIZUxBLz9')">Details</button>
+                    </div>
+                </div>
+                <div class="card" data-category="addon">
+                    <div class="card-info">
+                        <span class="tag" style="background:#e74c3c">ADD-ON</span>
+                        <h3>Realistic Biomes</h3>
+                        <p class="card-desc">Natural and beautiful world generation overhaul.</p>
+                        <button class="btn-detail" onclick="openModal('Realistic Biomes', 'Add-on', 'https://link-target.net/1461516/eLP5kGzyp8EU')">Details</button>
+                    </div>
+                </div>
+                <div class="card" data-category="addon">
+                    <div class="card-info">
+                        <span class="tag" style="background:#e74c3c">ADD-ON</span>
                         <h3>Action and Stuff</h3>
-                        <p class="card-desc">Dynamic animations and smoother gameplay mechanics.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Action and Stuff', 'Add-on', 'https://link-target.net/1461516/a8BRC3RJIxvf')">Details</button>
-                        </div>
+                        <p class="card-desc">Smooth player animations and dynamic movements.</p>
+                        <button class="btn-detail" onclick="openModal('Action and Stuff', 'Add-on', 'https://link-target.net/1461516/a8BRC3RJIxvf')">Details</button>
                     </div>
                 </div>
-
                 <div class="card" data-category="addon">
                     <div class="card-info">
-                        <span class="tag tag-addon">ADD-ON</span>
+                        <span class="tag" style="background:#e74c3c">ADD-ON</span>
                         <h3>SCP Uncaged</h3>
-                        <p class="card-desc">Add terrifying SCP creatures and horror elements to your world.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('SCP Uncaged', 'Add-on', 'https://link-center.net/1461516/MCugHbWBjGlp')">Details</button>
-                        </div>
+                        <p class="card-desc"> Terrifying SCP entities in your world.</p>
+                        <button class="btn-detail" onclick="openModal('SCP Uncaged', 'Add-on', 'https://link-center.net/1461516/MCugHbWBjGlp')">Details</button>
                     </div>
                 </div>
-
                 <div class="card" data-category="addon">
                     <div class="card-info">
-                        <span class="tag tag-addon">ADD-ON</span>
+                        <span class="tag" style="background:#e74c3c">ADD-ON</span>
                         <h3>Airplanes Addon</h3>
-                        <p class="card-desc">Fly multiple aircraft and explore the sky with aviation gear.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Airplanes Addon', 'Add-on', 'https://link-target.net/1461516/7fGlIqmdSq6l')">Details</button>
-                        </div>
+                        <p class="card-desc">Fly with various types of aircraft.</p>
+                        <button class="btn-detail" onclick="openModal('Airplanes Addon', 'Add-on', 'https://link-target.net/1461516/7fGlIqmdSq6l')">Details</button>
                     </div>
                 </div>
-
                 <div class="card" data-category="addon">
                     <div class="card-info">
-                        <span class="tag tag-addon">ADD-ON</span>
-                        <h3>Vehicles Resource Packs</h3>
-                        <p class="card-desc">High-quality resource packs for cars and utility vehicles.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Vehicles Resource Packs', 'Add-on', 'https://link-hub.net/1461516/K3e4WD7WwuPt')">Details</button>
-                        </div>
+                        <span class="tag" style="background:#e74c3c">ADD-ON</span>
+                        <h3>Vehicles Packs</h3>
+                        <p class="card-desc">Modern cars and utility vehicles collection.</p>
+                        <button class="btn-detail" onclick="openModal('Vehicles Packs', 'Add-on', 'https://link-hub.net/1461516/K3e4WD7WwuPt')">Details</button>
                     </div>
                 </div>
-
                 <div class="card" data-category="addon">
                     <div class="card-info">
-                        <span class="tag tag-addon">ADD-ON</span>
+                        <span class="tag" style="background:#e74c3c">ADD-ON</span>
                         <h3>100 Structures 2.0</h3>
-                        <p class="card-desc">Discover over 100 new structures generated automatically.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('100 Structures 2.0', 'Add-on', 'https://direct-link.net/1461516/EyKLFrLv3Oro')">Details</button>
-                        </div>
+                        <p class="card-desc">100+ new structures to explore.</p>
+                        <button class="btn-detail" onclick="openModal('100 Structures 2.0', 'Add-on', 'https://direct-link.net/1461516/EyKLFrLv3Oro')">Details</button>
                     </div>
                 </div>
-
                 <div class="card" data-category="addon">
                     <div class="card-info">
-                        <span class="tag tag-addon">ADD-ON</span>
+                        <span class="tag" style="background:#e74c3c">ADD-ON</span>
                         <h3>Furniture Craftable</h3>
-                        <p class="card-desc">Craft modern and functional furniture in survival mode.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Furniture Craftable', 'Add-on', 'https://link-target.net/1461516/tmGwPxXDw2Ud')">Details</button>
-                        </div>
+                        <p class="card-desc">Craft modern furniture in survival.</p>
+                        <button class="btn-detail" onclick="openModal('Furniture Craftable', 'Add-on', 'https://link-target.net/1461516/tmGwPxXDw2Ud')">Details</button>
                     </div>
                 </div>
-
                 <div class="card" data-category="addon">
                     <div class="card-info">
-                        <span class="tag tag-addon">ADD-ON</span>
+                        <span class="tag" style="background:#e74c3c">ADD-ON</span>
                         <h3>Security Addon</h3>
-                        <p class="card-desc">Protect your base with high-tech security systems.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Security Addon', 'Add-on', 'https://link-hub.net/1461516/3xNlWdCeDeTt')">Details</button>
-                        </div>
+                        <p class="card-desc">Advanced cameras and laser systems.</p>
+                        <button class="btn-detail" onclick="openModal('Security Addon', 'Add-on', 'https://link-hub.net/1461516/3xNlWdCeDeTt')">Details</button>
                     </div>
                 </div>
-
                 <div class="card" data-category="addon">
                     <div class="card-info">
-                        <span class="tag tag-addon">ADD-ON</span>
+                        <span class="tag" style="background:#e74c3c">ADD-ON</span>
                         <h3>TrueRealism HD</h3>
-                        <p class="card-desc">Stunning realistic textures and vivid environment details.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('TrueRealism HD', 'Add-on', 'https://link-center.net/1461516/HxtT3yYdUomd')">Details</button>
-                        </div>
+                        <p class="card-desc">High-quality textures for entities.</p>
+                        <button class="btn-detail" onclick="openModal('TrueRealism HD', 'Add-on', 'https://link-center.net/1461516/HxtT3yYdUomd')">Details</button>
                     </div>
                 </div>
-
                 <div class="card" data-category="addon">
                     <div class="card-info">
-                        <span class="tag tag-addon">ADD-ON</span>
+                        <span class="tag" style="background:#e74c3c">ADD-ON</span>
                         <h3>Furniture Addon</h3>
-                        <p class="card-desc">Decorate your home with a huge variety of furniture.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Furniture Addon', 'Add-on', 'https://link-target.net/1461516/ab1fCe914Gq7')">Details</button>
-                        </div>
+                        <p class="card-desc">Massive decoration pack.</p>
+                        <button class="btn-detail" onclick="openModal('Furniture Addon', 'Add-on', 'https://link-target.net/1461516/ab1fCe914Gq7')">Details</button>
                     </div>
                 </div>
-
                 <div class="card" data-category="addon">
                     <div class="card-info">
-                        <span class="tag tag-addon">ADD-ON</span>
+                        <span class="tag" style="background:#e74c3c">ADD-ON</span>
                         <h3>NPC The Ringmaster</h3>
-                        <p class="card-desc">Interactive NPCs and unique storylines for your world.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('NPC The Ringmaster', 'Add-on', 'https://direct-link.net/1461516/kGhXD9JwaK4A')">Details</button>
-                        </div>
+                        <p class="card-desc">Special NPCs for roleplay and story.</p>
+                        <button class="btn-detail" onclick="openModal('NPC The Ringmaster', 'Add-on', 'https://direct-link.net/1461516/kGhXD9JwaK4A')">Details</button>
                     </div>
                 </div>
-
                 <div class="card" data-category="addon">
                     <div class="card-info">
-                        <span class="tag tag-addon">ADD-ON</span>
-                        <h3>Craftable Modern Bases</h3>
-                        <p class="card-desc">Build advanced high-tech bases with simple recipes.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Craftable Modern Bases', 'Add-on', 'https://direct-link.net/1461516/1FWdT7CutPB2')">Details</button>
-                        </div>
+                        <span class="tag" style="background:#e74c3c">ADD-ON</span>
+                        <h3>Modern Bases</h3>
+                        <p class="card-desc">Craft blueprints for bases.</p>
+                        <button class="btn-detail" onclick="openModal('Modern Bases', 'Add-on', 'https://direct-link.net/1461516/1FWdT7CutPB2')">Details</button>
                     </div>
                 </div>
-
                 <div class="card" data-category="addon">
                     <div class="card-info">
-                        <span class="tag tag-addon">ADD-ON</span>
-                        <h3>Scary Mobs Addon</h3>
-                        <p class="card-desc">Challenge yourself with new terrifying survival threats.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Scary Mobs Addon', 'Add-on', 'https://link-center.net/1461516/k9RYsjnpymHo')">Details</button>
-                        </div>
+                        <span class="tag" style="background:#e74c3c">ADD-ON</span>
+                        <h3>Scary Mobs</h3>
+                        <p class="card-desc">Horror creatures for night survival.</p>
+                        <button class="btn-detail" onclick="openModal('Scary Mobs', 'Add-on', 'https://link-center.net/1461516/k9RYsjnpymHo')">Details</button>
                     </div>
                 </div>
-
                 <div class="card" data-category="addon">
                     <div class="card-info">
-                        <span class="tag tag-addon">ADD-ON</span>
+                        <span class="tag" style="background:#e74c3c">ADD-ON</span>
                         <h3>Cars Addon</h3>
-                        <p class="card-desc">Drive luxury and sports cars in your Minecraft city.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Cars Addon', 'Add-on', 'https://link-center.net/1461516/87v5YADQIK2c')">Details</button>
-                        </div>
+                        <p class="card-desc">Drivable luxury sports cars.</p>
+                        <button class="btn-detail" onclick="openModal('Cars Addon', 'Add-on', 'https://link-center.net/1461516/87v5YADQIK2c')">Details</button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="texture">
+                    <div class="card-info">
+                        <span class="tag" style="background:#3498db">TEXTURE</span>
+                        <h3>Patrix 32x32</h3>
+                        <p class="card-desc">Balanced realistic textures.</p>
+                        <button class="btn-detail" onclick="openModal('Patrix 32x32', 'Texture', 'https://direct-link.net/1461516/d5KNdErq6n1V')">Details</button>
+                    </div>
+                </div>
+                <div class="card" data-category="texture">
+                    <div class="card-info">
+                        <span class="tag" style="background:#3498db">TEXTURE</span>
+                        <h3>Patrix 64x64</h3>
+                        <p class="card-desc">Sharp textures for better visuals.</p>
+                        <button class="btn-detail" onclick="openModal('Patrix 64x64', 'Texture', 'https://direct-link.net/1461516/TnbcUjP4jYfI')">Details</button>
+                    </div>
+                </div>
+                <div class="card" data-category="texture">
+                    <div class="card-info">
+                        <span class="tag" style="background:#3498db">TEXTURE</span>
+                        <h3>Patrix 128x128</h3>
+                        <p class="card-desc">Ultra High Definition textures.</p>
+                        <button class="btn-detail" onclick="openModal('Patrix 128x128', 'Texture', 'https://link-target.net/1461516/qjleiAxt06')">Details</button>
+                    </div>
+                </div>
+                <div class="card" data-category="texture">
+                    <div class="card-info">
+                        <span class="tag" style="background:#3498db">TEXTURE</span>
+                        <h3>Modernarch 128x128</h3>
+                        <p class="card-desc">Architectural realistic textures.</p>
+                        <button class="btn-detail" onclick="openModal('Modernarch 128x128', 'Texture', 'https://link-center.net/1461516/wwe0ngyqAJQ2')">Details</button>
+                    </div>
+                </div>
+                <div class="card" data-category="texture">
+                    <div class="card-info">
+                        <span class="tag" style="background:#3498db">TEXTURE</span>
+                        <h3>Scatter Grass</h3>
+                        <p class="card-desc">Beautiful natural grass effect.</p>
+                        <button class="btn-detail" onclick="openModal('Scatter Grass', 'Texture', 'https://direct-link.net/1461516/TdE8pZpBWfVH')">Details</button>
                     </div>
                 </div>
 
                 <div class="card" data-category="shader">
                     <div class="card-info">
-                        <span class="tag tag-shader" style="background: #e67e22;">SHADER</span>
+                        <span class="tag" style="background:#f39c12">SHADER</span>
                         <h3>Mirai Shader</h3>
-                        <p class="card-desc">Optimized lighting and visuals for mobile performance.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Mirai Shader', 'Shader', 'https://link-center.net/1461516/5k6DUYrNRVmf')">Supports only android</button>
-                        </div>
+                        <p class="card-desc">Best mobile shader for Android.</p>
+                        <button class="btn-detail" onclick="openModal('Mirai Shader', 'Shader', 'https://link-center.net/1461516/5k6DUYrNRVmf')">Details</button>
                     </div>
                 </div>
-
                 <div class="card" data-category="shader">
                     <div class="card-info">
-                        <span class="tag tag-shader" style="background: #e67e22;">SHADER</span>
+                        <span class="tag" style="background:#f39c12">SHADER</span>
                         <h3>Revolution Vibrant</h3>
-                        <p class="card-desc">High saturation and stunning environmental colors.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Revolution Vibrant Visual', 'Shader', 'https://link-center.net/1461516/dJkRCWHDKsZU')">Details</button>
-                        </div>
+                        <p class="card-desc">Saturated colors and great lighting.</p>
+                        <button class="btn-detail" onclick="openModal('Revolution Vibrant', 'Shader', 'https://link-center.net/1461516/dJkRCWHDKsZU')">Details</button>
                     </div>
                 </div>
-
                 <div class="card" data-category="shader">
                     <div class="card-info">
-                        <span class="tag tag-shader" style="background: #e67e22;">SHADER</span>
-                        <h3>Prizma Visual</h3>
-                        <p class="card-desc">Rich colors and advanced dynamic lighting effects.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Prizma Visual', 'Shader', 'https://direct-link.net/1461516/ICndI6a3aBlu')">Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" data-category="shader">
-                    <div class="card-info">
-                        <span class="tag tag-shader" style="background: #e67e22;">SHADER</span>
-                        <h3>Luminous Dream</h3>
-                        <p class="card-desc">Beautiful dreamy vibes with soft and glowing light.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Luminous Dream', 'Shader', 'https://link-hub.net/1461516/WbNbgo6VFlgs')">Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card" data-category="shader">
-                    <div class="card-info">
-                        <span class="tag tag-shader" style="background: #e67e22;">SHADER</span>
+                        <span class="tag" style="background:#f39c12">SHADER</span>
                         <h3>Solace V</h3>
-                        <p class="card-desc">Realistic water and sky reflections for high-end devices.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Solace V', 'Shader', 'https://link-target.net/1461516/x80Mu5CMkTJq')">Details</button>
-                        </div>
+                        <p class="card-desc">Realistic water and atmospheric sky.</p>
+                        <button class="btn-detail" onclick="openModal('Solace V', 'Shader', 'https://link-target.net/1461516/x80Mu5CMkTJq')">Details</button>
                     </div>
                 </div>
-
                 <div class="card" data-category="shader">
                     <div class="card-info">
-                        <span class="tag tag-shader" style="background: #e67e22;">SHADER</span>
+                        <span class="tag" style="background:#f39c12">SHADER</span>
+                        <h3>Prizma Visual</h3>
+                        <p class="card-desc">Advanced colors and vivid world.</p>
+                        <button class="btn-detail" onclick="openModal('Prizma Visual', 'Shader', 'https://direct-link.net/1461516/ICndI6a3aBlu')">Details</button>
+                    </div>
+                </div>
+                <div class="card" data-category="shader">
+                    <div class="card-info">
+                        <span class="tag" style="background:#f39c12">SHADER</span>
+                        <h3>Luminous Dream</h3>
+                        <p class="card-desc">Soft dreamy visuals and lighting.</p>
+                        <button class="btn-detail" onclick="openModal('Luminous Dream', 'Shader', 'https://link-hub.net/1461516/WbNbgo6VFlgs')">Details</button>
+                    </div>
+                </div>
+                <div class="card" data-category="shader">
+                    <div class="card-info">
+                        <span class="tag" style="background:#f39c12">SHADER</span>
                         <h3>Vanilla Reforged</h3>
-                        <p class="card-desc">Modern lighting while keeping the original vanilla feel.</p>
-                        <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Vanilla Reforged', 'Shader', 'https://direct-link.net/1461516/jRWCRfiZJEO0')">Details</button>
-                        </div>
+                        <p class="card-desc">Modern vanilla look.</p>
+                        <button class="btn-detail" onclick="openModal('Vanilla Reforged', 'Shader', 'https://direct-link.net/1461516/jRWCRfiZJEO0')">Details</button>
                     </div>
                 </div>
 
@@ -337,80 +334,36 @@
 
     <div id="scriptModal" class="modal">
         <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h2 id="modalTitle">File Name</h2>
-            <p id="modalCategory" style="color: #2ecc71; margin: 10px 0;">Category</p>
-            <div class="modal-body-text">
-                <p>Click the button below to be redirected to the download page. Your support helps us keep the site running!</p>
-            </div>
-            <a id="scriptLink" href="#" target="_blank" class="get-script-btn rgb-animate" style="text-decoration: none; display: block; text-align: center; padding: 15px; background: #2ecc71; color: white; border-radius: 8px; margin-top: 20px; font-weight: bold; font-family: 'Kanit', sans-serif;">
-                <i class="fas fa-download"></i> GET DOWNLOAD LINK
-            </a>
+            <h2 id="modalTitle"></h2>
+            <p id="modalCategory"></p>
+            <p style="color:#bdc3c7;">Your download is ready. Click below to continue.</p>
+            <a id="scriptLink" href="#" target="_blank" class="get-script-btn">GET DOWNLOAD LINK</a>
+            <p style="cursor:pointer; margin-top:20px; color:#888;" onclick="closeModal()">Back to site</p>
         </div>
     </div>
 
     <script>
-        /**
-         * Open Modal with dynamic data
-         */
-        function openModal(name, cat, link) {
-            document.getElementById('modalTitle').innerText = name;
-            document.getElementById('modalCategory').innerText = cat;
-            document.getElementById('scriptLink').href = link;
-            document.getElementById('scriptModal').style.display = "flex";
+        function openModal(n,c,l) {
+            document.getElementById('modalTitle').innerText = n;
+            document.getElementById('modalCategory').innerText = c;
+            document.getElementById('scriptLink').href = l;
+            document.getElementById('scriptModal').style.display = 'flex';
         }
-
-        /**
-         * Close Modal
-         */
-        function closeModal() {
-            document.getElementById('scriptModal').style.display = "none";
-        }
-
-        /**
-         * Filter items by category
-         */
-        function filterScripts(category, element) {
-            // Update Active Class
-            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
-            element.classList.add('active');
-
-            // Show/Hide Cards
-            let cards = document.querySelectorAll('.card');
-            cards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
+        function closeModal() { document.getElementById('scriptModal').style.display = 'none'; }
+        function filterScripts(cat, el) {
+            document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+            el.classList.add('active');
+            document.querySelectorAll('.card').forEach(card => {
+                card.style.display = (cat === 'all' || card.getAttribute('data-category') === cat) ? 'block' : 'none';
             });
         }
-
-        /**
-         * Search functionality
-         */
-        document.getElementById('searchInput').addEventListener('input', function(e) {
-            let term = e.target.value.toLowerCase();
-            let cards = document.querySelectorAll('.card');
-            cards.forEach(card => {
-                let name = card.querySelector('h3').innerText.toLowerCase();
-                card.style.display = name.includes(term) ? 'block' : 'none';
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            let v = e.target.value.toLowerCase();
+            document.querySelectorAll('.card').forEach(c => {
+                c.style.display = c.querySelector('h3').innerText.toLowerCase().includes(v) ? 'block' : 'none';
             });
         });
-
-        /**
-         * Close modal when clicking outside content
-         */
-        window.onclick = function(event) {
-            let modal = document.getElementById('scriptModal');
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
-
-        function updateGallery() {
-            console.log("Star MCBE Hub Ready.");
-        }
+        function updateGallery() { console.log("Star MCBE Hub Loaded with 400+ lines potential."); }
     </script>
 </body>
 </html>
