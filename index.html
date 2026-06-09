@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
-<body onload="updateGallery()">
+<body>
 
     <div class="bg-wrapper">
         <div class="night">
@@ -22,39 +22,50 @@
 
     <div class="app-container">
         <aside class="sidebar">
-            <div class="logo"><i class="fab fa-tiktok"></i> Star MCBE</div>
-            <nav>
-                <p class="nav-title">CATEGORIES</p>
-                <ul>
-                    <li class="nav-item active" data-cat="all" onclick="filterScripts('all', this)">
-                        <i class="fas fa-th-large"></i> All Content
-                    </li>
-                    <li class="nav-item" data-cat="addon" onclick="filterScripts('addon', this)">
-                        <i class="fas fa-plus-square"></i> Add-ons
-                    </li>
-                    <li class="nav-item" data-cat="texture" onclick="filterScripts('texture', this)">
-                        <i class="fas fa-images"></i> Texture Packs
-                    </li>
-                    <li class="nav-item" data-cat="shader" onclick="filterScripts('shader', this)">
-                        <i class="fas fa-magic"></i> Vibrant Shaders
-                    </li>
-                    <li class="nav-item" data-cat="patch" onclick="filterScripts('patch', this)">
-                        <i class="fas fa-tools"></i> Minecraft Patches
-                    </li>
-                    <li class="nav-item" data-cat="world template" onclick="filterScripts('world template', this)">
-                        <i class="fas fa-globe"></i> World Templates
-                    </li>
-                    <div class="nav-item" data-cat="world" onclick="filterScripts('world', this)">
-    <i class="fas fa-globe-americas"></i> World Maps
-</div>
-
-                </ul>
-            </nav>
+            <div>
+                <div class="logo"><i class="fab fa-tiktok"></i> Star MCBE</div>
+                <nav>
+                    <p class="nav-title">CATEGORIES</p>
+                    <ul class="nav-menu">
+                        <li class="nav-item active" data-cat="all" onclick="filterScripts('all', this)">
+                            <i class="fas fa-th-large"></i> All Content
+                        </li>
+                        <li class="nav-item" data-cat="addon" onclick="filterScripts('addon', this)">
+                            <i class="fas fa-plus-square"></i> Add-ons
+                        </li>
+                        <li class="nav-item" data-cat="texture" onclick="filterScripts('texture', this)">
+                            <i class="fas fa-images"></i> Texture Packs
+                        </li>
+                        <li class="nav-item" data-cat="shader" onclick="filterScripts('shader', this)">
+                            <i class="fas fa-magic"></i> Vibrant Shaders
+                        </li>
+                        <li class="nav-item" data-cat="patch" onclick="filterScripts('patch', this)">
+                            <i class="fas fa-tools"></i> Minecraft Patches
+                        </li>
+                        <li class="nav-item" data-cat="world template" onclick="filterScripts('world template', this)">
+                            <i class="fas fa-globe"></i> World Templates
+                        </li>
+                        <li class="nav-item" data-cat="world" onclick="filterScripts('world', this)">
+                            <i class="fas fa-globe-americas"></i> World Maps
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </aside>
 
         <main class="main-content">
             <header>
-                <h1 class="neon-text">Star MCBE Collection</h1>
+                <div class="welcome-banner">
+                    <div class="banner-text">
+                        <span class="banner-tag">🔥 HOT UPDATE</span>
+                        <h2>Star MCBE Collection</h2>
+                        <p>The center of the best Minecraft Bedrock Edition add-ons, mods and scripts, freshly updated, safe, and smooth.</p>
+                    </div>
+                    <div class="banner-visual">
+                        <i class="fas fa-cubes"></i>
+                    </div>
+                </div>
+
                 <div class="search-bar">
                     <i class="fas fa-search"></i>
                     <input type="text" id="searchInput" placeholder="Search for content...">
@@ -63,31 +74,37 @@
 
             <div class="grid" id="scriptGrid">
                 
-                <div class="card" data-category="patch">
+                <div class="card" data-category="patch" data-date="2026-06-08">
                     <div class="card-info">
+                        <div class="badge-container">
+                            <span class="badge badge-hot">Hot Update</span>
+                        </div>
                         <span class="tag tag-patch" style="background: #9b59b6;">PATCH</span>
-                        <h3>Minecraft patch 1.26.13.1</h3>
+                        <h3>Minecraft patch 1.26.23.1</h3>
                         <p class="card-desc">Latest essential updates and critical fixes for Minecraft Bedrock Edition.</p>
                         <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Minecraft patch 1.26.13.1', 'Minecraft Patch', 'https://link-center.net/1461516/7qMkNpnhYRLr')">Support only android</button>
+                            <button class="btn-detail" onclick="openModal('Minecraft patch 1.26.23.1', 'Minecraft Patch', 'https://loot-link.com/s?OfYyCPMk')">Support only android</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="card" data-category="texture">
-    <div class="card-info">
-        <span class="tag tag-texture" style="background: #3498db;">TEXTURE</span>
-        <h3>Realism Craft Texture</h3>
-        <p class="card-desc">Upgrade your visuals with high-definition textures designed to bring realistic details to every block.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Realism Craft Texture', 'Texture', 'https://link-hub.net/1461516/xisskFUpKP4O')">Details</button>
-        </div>
-    </div>
-</div>
-
-
-                <div class="card" data-category="texture">
+                <div class="card" data-category="texture" data-date="2026-06-01">
                     <div class="card-info">
+                        <div class="badge-container">
+                            <span class="badge badge-star">Star</span>
+                        </div>
+                        <span class="tag tag-texture" style="background: #3498db;">TEXTURE</span>
+                        <h3>Realism Craft Texture</h3>
+                        <p class="card-desc">Upgrade your visuals with high-definition textures designed to bring realistic details to every block.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Realism Craft Texture', 'Texture', 'https://link-hub.net/1461516/xisskFUpKP4O')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="texture" data-date="2026-05-15">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
                         <span class="tag tag-texture" style="background: #3498db;">TEXTURE</span>
                         <h3>Scatter Grass</h3>
                         <p class="card-desc">Realistic grass density and beautiful natural scattering effects.</p>
@@ -97,8 +114,9 @@
                     </div>
                 </div>
 
-                <div class="card" data-category="texture">
+                <div class="card" data-category="texture" data-date="2026-05-10">
                     <div class="card-info">
+                        <div class="badge-container"></div>
                         <span class="tag tag-texture" style="background: #3498db;">TEXTURE</span>
                         <h3>Patrix 32x32</h3>
                         <p class="card-desc">Professional optimized textures for a balanced Minecraft experience.</p>
@@ -108,8 +126,9 @@
                     </div>
                 </div>
 
-                <div class="card" data-category="texture">
+                <div class="card" data-category="texture" data-date="2026-05-10">
                     <div class="card-info">
+                        <div class="badge-container"></div>
                         <span class="tag tag-texture" style="background: #3498db;">TEXTURE</span>
                         <h3>Patrix 64x64</h3>
                         <p class="card-desc">Enhanced visuals with high-resolution textures and great performance.</p>
@@ -119,8 +138,9 @@
                     </div>
                 </div>
 
-                <div class="card" data-category="texture">
+                <div class="card" data-category="texture" data-date="2026-05-10">
                     <div class="card-info">
+                        <div class="badge-container"></div>
                         <span class="tag tag-texture" style="background: #3498db;">TEXTURE</span>
                         <h3>Patrix 128x128</h3>
                         <p class="card-desc">Ultra-realistic texture pack designed for high-end mobile devices.</p>
@@ -130,8 +150,9 @@
                     </div>
                 </div>
 
-                <div class="card" data-category="texture">
+                <div class="card" data-category="texture" data-date="2026-05-08">
                     <div class="card-info">
+                        <div class="badge-container"></div>
                         <span class="tag tag-texture" style="background: #3498db;">TEXTURE</span>
                         <h3>Modernarch 128x128</h3>
                         <p class="card-desc">Modern architectural textures for hyper-realistic builds.</p>
@@ -141,8 +162,9 @@
                     </div>
                 </div>
 
-                <div class="card" data-category="addon">
+                <div class="card" data-category="addon" data-date="2026-05-07">
                     <div class="card-info">
+                        <div class="badge-container"></div>
                         <span class="tag tag-addon">ADD-ON</span>
                         <h3>Realistic Train</h3>
                         <p class="card-desc">Add highly detailed and realistic trains to your Minecraft world.</p>
@@ -152,88 +174,93 @@
                     </div>
                 </div>
 
-                <div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Furniture Addon 2</h3>
-        <p class="card-desc">Expand your interior design with even more modern and functional furniture pieces.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Furniture Addon 2', 'Add-on', 'https://link-hub.net/1461516/YZUBXoXWVbdb')">Details</button>
-        </div>
-    </div>
-</div>
-
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Cat Expansion</h3>
-        <p class="card-desc">Add a variety of new cat breeds and interactive feline features to your Minecraft world.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Cat Expansion', 'Add-on', 'https://link-center.net/1461516/HrCqynM9BfwA')">Details</button>
-        </div>
-    </div>
-</div>
-
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Troll Items Addon</h3>
-        <p class="card-desc">Prank your friends with a collection of hilarious and unexpected trick items.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Troll Items Addon', 'Add-on', 'https://link-hub.net/1461516/C8ybO0SNbKYG')">Details</button>
-        </div>
-    </div>
-</div>
-
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Factory Craft</h3>
-        <p class="card-desc">Advanced industrial crafting system with new machines and automated processes.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Factory Craft', 'Add-on', 'https://link-target.net/1461516/2y70D77vaSJG')">Details</button>
-        </div>
-    </div>
-</div>
-
-                
-<!-- [ADD-ON] XXL TNT Addon -->
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>XXL TNT Addon</h3>
-        <p class="card-desc">Upgrade your arsenal with massive explosives and custom TNT types that feature huge blast radiuses.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('XXL TNT Addon', 'Add-on', 'https://link-center.net/1461516/fdolULR8sVPk')">Details</button>
-        </div>
-    </div>
-</div>
-
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Sky Island Addon</h3>
-        <p class="card-desc">Enhance your skyblock experience with unique floating island generation and challenges.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Sky Island', 'Add-on', 'https://link-target.net/1461516/f6IYSREhdCLv')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <!-- [ADD-ON] Item Physics -->
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Item Physics</h3>
-        <p class="card-desc">Adds realistic physics to dropped items, making them lie flat on the ground instead of floating.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Item Physics', 'Add-on', 'https://link-center.net/1461516/LTaL9M99PooR')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <div class="card" data-category="addon">
+                <div class="card" data-category="addon" data-date="2026-05-24">
                     <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Furniture Addon 2</h3>
+                        <p class="card-desc">Expand your interior design with even more modern and functional furniture pieces.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Furniture Addon 2', 'Add-on', 'https://link-hub.net/1461516/YZUBXoXWVbdb')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-05-24">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Cat Expansion</h3>
+                        <p class="card-desc">Add a variety of new cat breeds and interactive feline features to your Minecraft world.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Cat Expansion', 'Add-on', 'https://link-center.net/1461516/HrCqynM9BfwA')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-05-23">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Troll Items Addon</h3>
+                        <p class="card-desc">Prank your friends with a collection of hilarious and unexpected trick items.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Troll Items Addon', 'Add-on', 'https://link-hub.net/1461516/C8ybO0SNbKYG')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-05-20">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Factory Craft</h3>
+                        <p class="card-desc">Advanced industrial crafting system with new machines and automated processes.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Factory Craft', 'Add-on', 'https://link-target.net/1461516/2y70D77vaSJG')">Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card" data-category="addon" data-date="2026-05-19">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>XXL TNT Addon</h3>
+                        <p class="card-desc">Upgrade your arsenal with massive explosives and custom TNT types that feature huge blast radiuses.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('XXL TNT Addon', 'Add-on', 'https://link-center.net/1461516/fdolULR8sVPk')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-05-19">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Sky Island Addon</h3>
+                        <p class="card-desc">Enhance your skyblock experience with unique floating island generation and challenges.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Sky Island', 'Add-on', 'https://link-target.net/1461516/f6IYSREhdCLv')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-05-18">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Item Physics</h3>
+                        <p class="card-desc">Adds realistic physics to dropped items, making them lie flat on the ground instead of floating.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Item Physics', 'Add-on', 'https://link-center.net/1461516/LTaL9M99PooR')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-05-15">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
                         <span class="tag tag-addon">ADD-ON</span>
                         <h3>(Update) Action and Stuff 1.10.1</h3>
                         <p class="card-desc">Dynamic animations and smoother gameplay mechanics.</p>
@@ -243,408 +270,417 @@
                     </div>
                 </div>
 
-                <div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Airplanes Addon</h3>
-        <p class="card-desc">Take to the skies with a variety of fully functional airplanes, complete with custom controls and smooth flight physics.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Airplanes Addon', 'Add-on', 'https://lootdest.org/s?vDRMadZX')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <!-- [ADD-ON] World Builder Addon -->
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>World Builder Addon</h3>
-        <p class="card-desc">Advanced tools for terrain editing and rapid construction to help you shape your world like a pro.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('World Builder Addon', 'Add-on', 'https://link-center.net/1461516/YnzNU6v3WZ0J')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Caves Expanded</h3>
-        <p class="card-desc">Transform your underground world with new biomes, rare ores, and unique cave structures that make mining an adventure.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Caves Expanded', 'Add-on', 'https://link-hub.net/1461516/UDY2LkRZvLMj')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Blaster Gun Addon</h3>
-        <p class="card-desc">Upgrade your combat with futuristic laser weapons and custom projectile effects.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Blaster Gun', 'Add-on', 'https://link-hub.net/1461516/E1nQFw3vge2N')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <!-- [ADD-ON] Auto Tool Swap Addon -->
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Auto Tool Swap Addon</h3>
-        <p class="card-desc">Automatically switches to the correct tool in your hotbar for the block you are currently mining.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Auto Tool Swap Addon', 'Add-on', 'https://direct-link.net/1461516/RYuR7DXgtZOK')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <!-- [ADD-ON] Road Tractor -->
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Road Tractor</h3>
-        <p class="card-desc">Drive powerful road tractors designed for heavy lifting and transportation across your Minecraft world.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Road Tractor', 'Add-on', 'https://link-center.net/1461516/8dUCQtmh2Tj1')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>More Camera Perspectives</h3>
-        <p class="card-desc">Enhance your gameplay with new camera angles, including over-the-shoulder and cinematic views for a fresh experience.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('More Camera Perspectives', 'Add-on', 'https://link-hub.net/1461516/guL2pEFSTsjb')">Details</button>
-        </div>
-    </div>
-</div>
-
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Meme Weapons Addon</h3>
-        <p class="card-desc">Fight enemies using hilarious weapons inspired by viral internet memes and sound effects.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Meme Weapons', 'Add-on', 'https://link-target.net/1461516/c3CAIZUxBLz9')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Dynamic Light Addon</h3>
-        <p class="card-desc">Illuminate your surroundings simply by holding torches or glowing items in your hand while exploring dark caves.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Dynamic Light Addon', 'Add-on', 'https://lootdest.org/s?z840Hza0')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <!-- [ADD-ON] Backrooms Addon -->
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Backrooms Addon</h3>
-        <p class="card-desc">No-clip out of reality into the endless yellow rooms. Features multiple levels and eerie entities.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Backrooms Addon', 'Add-on', 'https://link-target.net/1461516/gh4ljzXSNocf')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>One Punch Man Addon</h3>
-        <p class="card-desc">Become the strongest hero! Experience Saitama's overwhelming power and unleash devastating punches that can defeat any mob in one hit.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('One Punch Man Addon', 'Add-on', 'https://link-center.net/1461516/iLuNBAehedWr')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Torn Ares Addon</h3>
-        <p class="card-desc">Unleash powerful new weapons, face formidable enemies, and challenge the wrath of Ares in your world.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Torn Ares Addon', 'Add-on', 'https://lootdest.org/s?a3I4Pq0s')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>The One Who Watches Addon</h3>
-        <p class="card-desc">Beware of the mysterious entity that follows you from the shadows. A terrifying addition that adds a haunting atmosphere to your world.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('The One Who Watches Addon', 'Add-on', 'https://link-target.net/1461516/Y1EXJgheN0tj')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <!-- [ADD-ON] Invisible Addon -->
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Invincible Addon</h3>
-        <p class="card-desc">Master the art of stealth with new invisibility features and items that make you completely unseen.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Invincible Addon', 'Add-on', 'https://link-hub.net/1461516/o7VIxGbpY4WA')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Redstone Addon</h3>
-        <p class="card-desc">Expand your engineering possibilities with new redstone components, logic gates, and advanced mechanical blocks.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Redstone Addon', 'Add-on', 'https://link-center.net/1461516/5jDa7RUlYyVQ')">Details</button>
-        </div>
-    </div>
-</div>
-
-
-                <!-- [ADD-ON] Timeless and Classics Zero Guns (TaCZ) -->
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Timeless and Classics Zero Guns (TaCZ)</h3>
-        <p class="card-desc">The ultimate gun experience with highly detailed 3D models, custom animations, and realistic firing mechanics.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Timeless and Classics Zero Guns (TaCZ)', 'Add-on', 'https://link-hub.net/1461516/sumJKul55MaQ')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Mc Donald Addon</h3>
-        <p class="card-desc">Build your own fast-food empire with custom food items and restaurant furniture.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Mc Donald Addon', 'Add-on', 'https://link-hub.net/1461516/nTtE6msIRj5P')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Dinosaurs Addon</h3>
-        <p class="card-desc">Bring prehistoric giants back to life with realistic dinosaur entities, fossils, and taming mechanics.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Dinosaurs Addon', 'Add-on', 'https://link-hub.net/1461516/2bfO5J8ISTFF')">Details</button>
-        </div>
-    </div>
-</div>
-
-
-                <div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Ranzie Rise and Survive</h3>
-        <p class="card-desc">Face the ultimate survival challenge with new difficulty mechanics and powerful entities.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Ranzie Rise and Survive', 'Add-on', 'https://link-center.net/1461516/FoqipePMEh12')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <!-- [ADD-ON] Anime Jutsu Addon -->
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Anime Jutsu Addon</h3>
-        <p class="card-desc">Unleash powerful ninja abilities and iconic anime techniques with custom animations and effects.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Anime Jutsu Addon', 'Add-on', 'https://link-center.net/1461516/A3ZJgVDYkcM3')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <!-- [ADD-ON] Physics Addon -->
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Physics Addon</h3>
-        <p class="card-desc">Bring your world to life with advanced physics for blocks, entities, and environmental interactions.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Physics Addon', 'Add-on', 'https://link-target.net/1461516/YsvQDGtL3Ibi')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <!-- [ADD-ON] Damage Indicators Addon -->
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Damage Indicators Addon</h3>
-        <p class="card-desc">Visualize your power with real-time damage numbers and health bars for every entity you encounter.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Damage Indicators Addon', 'Add-on', 'https://link-center.net/1461516/zzMJIED8jHAj')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Just Zoom</h3>
-        <p class="card-desc">Get a better view of your surroundings with this essential zoom functionality for your game.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Just Zoom', 'Add-on', 'https://direct-link.net/1461516/fTmqEBZiMPYO')">Details</button>
-        </div>
-    </div>
-</div>
-
-
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Combine Ores V4</h3>
-        <p class="card-desc">Mix different types of ores to craft legendary hybrid alloys and ultimate gear.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Combine Ores V4', 'Add-on', 'https://link-hub.net/1461516/K48FHSGAXyoj')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <!-- [ADD-ON] Force Creative -->
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Force Creative</h3>
-        <p class="card-desc">Gain instant access to creative mode features and tools, even in restricted environments.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Force Creative', 'Add-on', 'https://link-target.net/1461516/myThOcPTE6fJ')">Details</button>
-        </div>
-    </div>
-</div>
-
-
-                <!-- [ADD-ON] Extreme Weather -->
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Extreme Weather</h3>
-        <p class="card-desc">Experience the power of nature with tornadoes, tsunamis, and destructive storms that change your world.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Extreme Weather', 'Add-on', 'https://link-center.net/1461516/LePDjX6rKRRv')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <!-- [ADD-ON] Ultra Cars Addon -->
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Ultra Cars Addon</h3>
-        <p class="card-desc">Drive the fastest and most detailed supercars in your world with realistic physics and sounds.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Ultra Cars Addon', 'Add-on', 'https://direct-link.net/1461516/QlUIlbyQlglX')">Details</button>
-        </div>
-    </div>
-</div>
-
-
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Machines Addon</h3>
-        <p class="card-desc">Automate your world with advanced mechanical tools and industrial machinery.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Machines', 'Add-on', 'https://link-target.net/1461516/TkHHF1FRqnqF')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <!-- [ADD-ON] Parkour++ Addon -->
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Parkour++ Addon</h3>
-        <p class="card-desc">Master your movement with advanced parkour mechanics, including wall runs, double jumps, and ledge climbs.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Parkour++ Addon', 'Add-on', 'https://link-center.net/1461516/0KaAj88YstZn')">Details</button>
-        </div>
-    </div>
-</div>
-
-
-                <!-- [ADD-ON] Combat Actions + Weapons Addon -->
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Combat Actions + Weapons Addon</h3>
-        <p class="card-desc">Enhance your battle experience with new combat animations, special moves, and a massive arsenal of weapons.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Combat Actions + Weapons Addon', 'Add-on', 'https://link-target.net/1461516/Lyze7IKJUJ0s')">Details</button>
-        </div>
-    </div>
-</div>
-
-
-                <!-- [ADD-ON] Realism VFX Addon -->
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Realism VFX Addon</h3>
-        <p class="card-desc">Upgrade your game with high-quality visual effects, from realistic particles to enhanced environmental details.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Realism VFX Addon', 'Add-on', 'https://direct-link.net/1461516/KSg4psuSh1sz')">Details</button>
-        </div>
-    </div>
-</div>
-
-
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Fishing Addon</h3>
-        <p class="card-desc">Enhance your fishing experience with new fish types, rods, and aquatic rewards.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Fishing Addon', 'Add-on', 'https://link-center.net/1461516/pvLUy7WaQQ7S')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Effortless Building</h3>
-        <p class="card-desc">Build massive structures in seconds with advanced mirrors, arrays, and fast placement tools.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Effortless Building', 'Add-on', 'https://link-target.net/1461516/7wsCAtfmPZrV')">Details</button>
-        </div>
-    </div>
-</div>
-
-
-
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Realistic Biomes</h3>
-        <p class="card-desc">Transform your world with enhanced natural generation and more immersive environments.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Realistic Biomes', 'Add-on', 'https://link-target.net/1461516/eLP5kGzyp8EU')">Details</button>
-        </div>
-    </div>
-</div>
-
-
-                <div class="card" data-category="addon">
+                <div class="card" data-category="addon" data-date="2026-05-12">
                     <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Airplanes Addon</h3>
+                        <p class="card-desc">Take to the skies with a variety of fully functional airplanes, complete with custom controls and smooth flight physics.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Airplanes Addon', 'Add-on', 'https://lootdest.org/s?vDRMadZX')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-05-11">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>World Builder Addon</h3>
+                        <p class="card-desc">Advanced tools for terrain editing and rapid construction to help you shape your world like a pro.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('World Builder Addon', 'Add-on', 'https://link-center.net/1461516/YnzNU6v3WZ0J')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-05-09">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Caves Expanded</h3>
+                        <p class="card-desc">Transform your underground world with new biomes, rare ores, and unique cave structures that make mining an adventure.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Caves Expanded', 'Add-on', 'https://link-hub.net/1461516/UDY2LkRZvLMj')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-05-09">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Blaster Gun Addon</h3>
+                        <p class="card-desc">Upgrade your combat with futuristic laser weapons and custom projectile effects.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Blaster Gun', 'Add-on', 'https://link-hub.net/1461516/E1nQFw3vge2N')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-05-05">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Auto Tool Swap Addon</h3>
+                        <p class="card-desc">Automatically switches to the correct tool in your hotbar for the block you are currently mining.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Auto Tool Swap Addon', 'Add-on', 'https://direct-link.net/1461516/RYuR7DXgtZOK')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-05-05">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Road Tractor</h3>
+                        <p class="card-desc">Drive powerful road tractors designed for heavy lifting and transportation across your Minecraft world.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Road Tractor', 'Add-on', 'https://link-center.net/1461516/8dUCQtmh2Tj1')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-05-02">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>More Camera Perspectives</h3>
+                        <p class="card-desc">Enhance your gameplay with new camera angles, including over-the-shoulder and cinematic views for a fresh experience.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('More Camera Perspectives', 'Add-on', 'https://link-hub.net/1461516/guL2pEFSTsjb')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-05-01">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Meme Weapons Addon</h3>
+                        <p class="card-desc">Fight enemies using hilarious weapons inspired by viral internet memes and sound effects.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Meme Weapons', 'Add-on', 'https://link-target.net/1461516/c3CAIZUxBLz9')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-04-28">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Dynamic Light Addon</h3>
+                        <p class="card-desc">Illuminate your surroundings simply by holding torches or glowing items in your hand while exploring dark caves.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Dynamic Light Addon', 'Add-on', 'https://lootdest.org/s?z840Hza0')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-04-27">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Backrooms Addon</h3>
+                        <p class="card-desc">No-clip out of reality into the endless yellow rooms. Features multiple levels and eerie entities.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Backrooms Addon', 'Add-on', 'https://link-target.net/1461516/gh4ljzXSNocf')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-04-25">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>One Punch Man Addon</h3>
+                        <p class="card-desc">Become the strongest hero! Experience Saitama's overwhelming power and unleash devastating punches that can defeat any mob in one hit.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('One Punch Man Addon', 'Add-on', 'https://link-center.net/1461516/iLuNBAehedWr')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-04-20">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Torn Ares Addon</h3>
+                        <p class="card-desc">Unleash powerful new weapons, face formidable enemies, and challenge the wrath of Ares in your world.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Torn Ares Addon', 'Add-on', 'https://lootdest.org/s?a3I4Pq0s')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-04-18">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>The One Who Watches Addon</h3>
+                        <p class="card-desc">Beware of the mysterious entity that follows you from the shadows. A terrifying addition that adds a haunting atmosphere to your world.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('The One Who Watches Addon', 'Add-on', 'https://link-target.net/1461516/Y1EXJgheN0tj')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-04-15">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Invincible Addon</h3>
+                        <p class="card-desc">Master the art of stealth with new invisibility features and items that make you completely unseen.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Invincible Addon', 'Add-on', 'https://link-hub.net/1461516/o7VIxGbpY4WA')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-04-12">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Redstone Addon</h3>
+                        <p class="card-desc">Expand your engineering possibilities with new redstone components, logic gates, and advanced mechanical blocks.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Redstone Addon', 'Add-on', 'https://link-center.net/1461516/5jDa7RUlYyVQ')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-04-10">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Timeless and Classics Zero Guns (TaCZ)</h3>
+                        <p class="card-desc">The ultimate gun experience with highly detailed 3D models, custom animations, and realistic firing mechanics.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Timeless and Classics Zero Guns (TaCZ)', 'Add-on', 'https://link-hub.net/1461516/sumJKul55MaQ')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-04-09">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Mc Donald Addon</h3>
+                        <p class="card-desc">Build your own fast-food empire with custom food items and restaurant furniture.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Mc Donald Addon', 'Add-on', 'https://link-hub.net/1461516/nTtE6msIRj5P')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-04-05">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Dinosaurs Addon</h3>
+                        <p class="card-desc">Bring prehistoric giants back to life with realistic dinosaur entities, fossils, and taming mechanics.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Dinosaurs Addon', 'Add-on', 'https://link-hub.net/1461516/2bfO5J8ISTFF')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-04-02">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Ranzie Rise and Survive</h3>
+                        <p class="card-desc">Face the ultimate survival challenge with new difficulty mechanics and powerful entities.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Ranzie Rise and Survive', 'Add-on', 'https://link-center.net/1461516/FoqipePMEh12')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-03-29">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Anime Jutsu Addon</h3>
+                        <p class="card-desc">Unleash powerful ninja abilities and iconic anime techniques with custom animations and effects.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Anime Jutsu Addon', 'Add-on', 'https://link-center.net/1461516/A3ZJgVDYkcM3')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-03-25">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Physics Addon</h3>
+                        <p class="card-desc">Bring your world to life with advanced physics for blocks, entities, and environmental interactions.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Physics Addon', 'Add-on', 'https://link-target.net/1461516/YsvQDGtL3Ibi')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-03-20">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Damage Indicators Addon</h3>
+                        <p class="card-desc">Visualize your power with real-time damage numbers and health bars for every entity you encounter.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Damage Indicators Addon', 'Add-on', 'https://link-center.net/1461516/zzMJIED8jHAj')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-03-18">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Just Zoom</h3>
+                        <p class="card-desc">Get a better view of your surroundings with this essential zoom functionality for your game.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Just Zoom', 'Add-on', 'https://direct-link.net/1461516/fTmqEBZiMPYO')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-03-15">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Combine Ores V4</h3>
+                        <p class="card-desc">Mix different types of ores to craft legendary hybrid alloys and ultimate gear.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Combine Ores V4', 'Add-on', 'https://link-hub.net/1461516/K48FHSGAXyoj')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-03-10">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Force Creative</h3>
+                        <p class="card-desc">Gain instant access to creative mode features and tools, even in restricted environments.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Force Creative', 'Add-on', 'https://link-target.net/1461516/myThOcPTE6fJ')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-03-05">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Extreme Weather</h3>
+                        <p class="card-desc">Experience the power of nature with tornadoes, tsunamis, and destructive storms that change your world.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Extreme Weather', 'Add-on', 'https://link-center.net/1461516/LePDjX6rKRRv')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-03-02">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Ultra Cars Addon</h3>
+                        <p class="card-desc">Drive the fastest and most detailed supercars in your world with realistic physics and sounds.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Ultra Cars Addon', 'Add-on', 'https://direct-link.net/1461516/QlUIlbyQlglX')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-02-28">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Machines Addon</h3>
+                        <p class="card-desc">Automate your world with advanced mechanical tools and industrial machinery.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Machines', 'Add-on', 'https://link-target.net/1461516/TkHHF1FRqnqF')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-02-25">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Parkour++ Addon</h3>
+                        <p class="card-desc">Master your movement with advanced parkour mechanics, including wall runs, double jumps, and ledge climbs.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Parkour++ Addon', 'Add-on', 'https://link-center.net/1461516/0KaAj88YstZn')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-02-20">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Combat Actions + Weapons Addon</h3>
+                        <p class="card-desc">Enhance your battle experience with new combat animations, special moves, and a massive arsenal of weapons.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Combat Actions + Weapons Addon', 'Add-on', 'https://link-target.net/1461516/Lyze7IKJUJ0s')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-02-15">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Realism VFX Addon</h3>
+                        <p class="card-desc">Upgrade your game with high-quality visual effects, from realistic particles to enhanced environmental details.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Realism VFX Addon', 'Add-on', 'https://direct-link.net/1461516/KSg4psuSh1sz')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-02-10">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Fishing Addon</h3>
+                        <p class="card-desc">Enhance your fishing experience with new fish types, rods, and aquatic rewards.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Fishing Addon', 'Add-on', 'https://link-center.net/1461516/pvLUy7WaQQ7S')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-02-05">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Effortless Building</h3>
+                        <p class="card-desc">Build massive structures in seconds with advanced mirrors, arrays, and fast placement tools.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Effortless Building', 'Add-on', 'https://link-target.net/1461516/7wsCAtfmPZrV')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-01-28">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Realistic Biomes</h3>
+                        <p class="card-desc">Transform your world with enhanced natural generation and more immersive environments.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Realistic Biomes', 'Add-on', 'https://link-target.net/1461516/eLP5kGzyp8EU')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-01-25">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
                         <span class="tag tag-addon">ADD-ON</span>
                         <h3>SCP Uncaged</h3>
                         <p class="card-desc">Add terrifying SCP creatures and horror elements to your world.</p>
@@ -654,31 +690,21 @@
                     </div>
                 </div>
 
-                <div class="card" data-category="addon">
+                <div class="card" data-category="addon" data-date="2026-01-20">
                     <div class="card-info">
+                        <div class="badge-container"></div>
                         <span class="tag tag-addon">ADD-ON</span>
-                        <h3>Airplanes Addon</h3>
-                        <p class="card-desc">Fly multiple aircraft and explore the sky with aviation gear.</p>
+                        <h3>CineCam Addon</h3>
+                        <p class="card-desc">Create professional cinematic shots and smooth camera movements for your world or showcases.</p>
                         <div class="btn-group">
-                            <button class="btn-detail" onclick="openModal('Airplanes Addon', 'Add-on', 'https://link-target.net/1461516/7fGlIqmdSq6l')">Details</button>
+                            <button class="btn-detail" onclick="openModal('CineCam Addon', 'Add-on', 'https://direct-link.net/1461516/Q5dmHahrKX2X')">Details</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>CineCam Addon</h3>
-        <p class="card-desc">Create professional cinematic shots and smooth camera movements for your world or showcases.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('CineCam Addon', 'Add-on', 'https://direct-link.net/1461516/Q5dmHahrKX2X')">Details</button>
-        </div>
-    </div>
-</div>
-
-
-                <div class="card" data-category="addon">
+                <div class="card" data-category="addon" data-date="2026-01-15">
                     <div class="card-info">
+                        <div class="badge-container"></div>
                         <span class="tag tag-addon">ADD-ON</span>
                         <h3>Vehicles Resource Packs</h3>
                         <p class="card-desc">High-quality resource packs for cars and utility vehicles.</p>
@@ -688,8 +714,9 @@
                     </div>
                 </div>
 
-                <div class="card" data-category="addon">
+                <div class="card" data-category="addon" data-date="2026-01-10">
                     <div class="card-info">
+                        <div class="badge-container"></div>
                         <span class="tag tag-addon">ADD-ON</span>
                         <h3>100 Structures 2.0</h3>
                         <p class="card-desc">Discover over 100 new structures generated automatically.</p>
@@ -699,31 +726,33 @@
                     </div>
                 </div>
 
-                <div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Essentials Addon</h3>
-        <p class="card-desc">Complete set of essential tools and commands to enhance your survival gameplay experience.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Essentials Addon', 'Add-on', 'https://link-center.net/1461516/jCGFiNIRfXNc')">Details</button>
-        </div>
-    </div>
-</div>
-
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Hidden Doors</h3>
-        <p class="card-desc">Protect your secret base with camouflaged doors that blend perfectly with surrounding blocks.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Hidden Doors', 'Add-on', 'https://link-target.net/1461516/9MsLDSb3o26o')">Details</button>
-        </div>
-    </div>
-</div>
-
-
-                <div class="card" data-category="addon">
+                <div class="card" data-category="addon" data-date="2026-01-05">
                     <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Essentials Addon</h3>
+                        <p class="card-desc">Complete set of essential tools and commands to enhance your survival gameplay experience.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Essentials Addon', 'Add-on', 'https://link-center.net/1461516/jCGFiNIRfXNc')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2026-01-02">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Hidden Doors</h3>
+                        <p class="card-desc">Protect your secret base with camouflaged doors that blend perfectly with surrounding blocks.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Hidden Doors', 'Add-on', 'https://link-target.net/1461516/9MsLDSb3o26o')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2025-12-28">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
                         <span class="tag tag-addon">ADD-ON</span>
                         <h3>Furniture Craftable</h3>
                         <p class="card-desc">Craft modern and functional furniture in survival mode.</p>
@@ -733,19 +762,21 @@
                     </div>
                 </div>
 
-                <div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Modern Military II</h3>
-        <p class="card-desc">Equip yourself with advanced modern warfare gear, high-tech weapons, and military vehicles.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Modern Military II', 'Add-on', 'https://link-target.net/1461516/ozSAjDnTjIxD')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <div class="card" data-category="addon">
+                <div class="card" data-category="addon" data-date="2025-12-25">
                     <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Modern Military II</h3>
+                        <p class="card-desc">Equip yourself with advanced modern warfare gear, high-tech weapons, and military vehicles.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Modern Military II', 'Add-on', 'https://link-target.net/1461516/ozSAjDnTjIxD')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2025-12-20">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
                         <span class="tag tag-addon">ADD-ON</span>
                         <h3>Security Addon</h3>
                         <p class="card-desc">Protect your base with high-tech security systems.</p>
@@ -755,8 +786,9 @@
                     </div>
                 </div>
 
-                <div class="card" data-category="addon">
+                <div class="card" data-category="addon" data-date="2025-12-15">
                     <div class="card-info">
+                        <div class="badge-container"></div>
                         <span class="tag tag-addon">ADD-ON</span>
                         <h3>TrueRealism HD</h3>
                         <p class="card-desc">Stunning realistic textures and vivid environment details.</p>
@@ -766,8 +798,9 @@
                     </div>
                 </div>
 
-                <div class="card" data-category="addon">
+                <div class="card" data-category="addon" data-date="2025-12-10">
                     <div class="card-info">
+                        <div class="badge-container"></div>
                         <span class="tag tag-addon">ADD-ON</span>
                         <h3>Furniture Addon</h3>
                         <p class="card-desc">Decorate your home with a huge variety of furniture.</p>
@@ -777,8 +810,9 @@
                     </div>
                 </div>
 
-                <div class="card" data-category="addon">
+                <div class="card" data-category="addon" data-date="2025-12-05">
                     <div class="card-info">
+                        <div class="badge-container"></div>
                         <span class="tag tag-addon">ADD-ON</span>
                         <h3>NPC The Ringmaster</h3>
                         <p class="card-desc">Interactive NPCs and unique storylines for your world.</p>
@@ -788,8 +822,9 @@
                     </div>
                 </div>
 
-                <div class="card" data-category="addon">
+                <div class="card" data-category="addon" data-date="2025-12-01">
                     <div class="card-info">
+                        <div class="badge-container"></div>
                         <span class="tag tag-addon">ADD-ON</span>
                         <h3>Craftable Modern Bases</h3>
                         <p class="card-desc">Build advanced high-tech bases with simple recipes.</p>
@@ -799,31 +834,33 @@
                     </div>
                 </div>
 
-                <div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Factory Addon</h3>
-        <p class="card-desc">Industrialize your world with automated production lines and massive factory machinery.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Factory Addon', 'Add-on', 'https://direct-link.net/1461516/03eVgtyKFTeM')">Details</button>
-        </div>
-    </div>
-</div>
-
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Ender Rooms</h3>
-        <p class="card-desc">Expand your dimension with mysterious Ender-themed chambers and unique teleportation mechanics.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Ender Rooms', 'Add-on', 'https://link-hub.net/1461516/fiNVpHQM0mkA')">Details</button>
-        </div>
-    </div>
-</div>
-
-
-                <div class="card" data-category="addon">
+                <div class="card" data-category="addon" data-date="2025-11-28">
                     <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Factory Addon</h3>
+                        <p class="card-desc">Industrialize your world with automated production lines and massive factory machinery.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Factory Addon', 'Add-on', 'https://direct-link.net/1461516/03eVgtyKFTeM')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2025-11-25">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Ender Rooms</h3>
+                        <p class="card-desc">Expand your dimension with mysterious Ender-themed chambers and unique teleportation mechanics.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Ender Rooms', 'Add-on', 'https://link-hub.net/1461516/fiNVpHQM0mkA')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2025-11-20">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
                         <span class="tag tag-addon">ADD-ON</span>
                         <h3>Scary Mobs Addon</h3>
                         <p class="card-desc">Challenge yourself with new terrifying survival threats.</p>
@@ -833,8 +870,9 @@
                     </div>
                 </div>
 
-                <div class="card" data-category="addon">
+                <div class="card" data-category="addon" data-date="2025-11-15">
                     <div class="card-info">
+                        <div class="badge-container"></div>
                         <span class="tag tag-addon">ADD-ON</span>
                         <h3>Cars Addon</h3>
                         <p class="card-desc">Drive luxury and sports cars in your Minecraft city.</p>
@@ -844,214 +882,225 @@
                     </div>
                 </div>
 
-                <div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Weapons and Power</h3>
-        <p class="card-desc">Unleash devastating strength with new legendary weapons and supernatural abilities.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Weapons and Power', 'Add-on', 'https://link-hub.net/1461516/Y24Zwg2HmjUN')">Details</button>
-        </div>
-    </div>
-</div>
-
-<div class="card" data-category="addon">
-    <div class="card-info">
-        <span class="tag tag-addon">ADD-ON</span>
-        <h3>Auto Quarry 1.1</h3>
-        <p class="card-desc">Advanced automatic mining system for efficient resource gathering in survival.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Auto Quarry 1.1', 'Add-on', 'https://direct-link.net/1461516/uGyA4NPrL2sp')">Details</button>
-        </div>
-    </div>
-</div>
-
-
-                <div class="card" data-category="world">
-    <div class="card-info">
-        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
-        <h3>Millionaire Horror Hotel</h3>
-        <p class="card-desc">Experience terror in an abandoned hotel filled with dark secrets.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Millionaire Horror Hotel', 'World', 'https://direct-link.net/1461516/KYRoc6kVg301')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <div class="card" data-category="world">
-    <div class="card-info">
-        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
-        <h3>Life in Italy</h3>
-        <p class="card-desc">Explore the beautiful streets and culture of Italy in this immersive roleplay map.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Life in Italy', 'World', 'https://link-center.net/1461516/71htDC0iTWmd')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <div class="card" data-category="world">
-    <div class="card-info">
-        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
-        <h3>Animal Ville</h3>
-        <p class="card-desc">Welcome to a peaceful town where you can live and interact with a variety of friendly animals.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Animal Ville', 'World', 'https://link-target.net/1461516/ZcUEiw4QEgYL')">Details</button>
-        </div>
-    </div>
-</div>
-
-           <div class="card" data-category="world">
-    <div class="card-info">
-        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
-        <h3>Viking Valley</h3>
-        <p class="card-desc">Explore a massive Nordic valley filled with Viking longhouses, snowy peaks, and hidden treasures.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Viking Valley', 'World', 'https://link-target.net/1461516/qq8egzZNuJJb')">Details</button>
-        </div>
-    </div>
-</div>
-
-<div class="card" data-category="world">
-    <div class="card-info">
-        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
-        <h3>100 Days Challenge</h3>
-        <p class="card-desc">Test your survival skills in this custom map designed for the ultimate 100-day hardcore experience.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('100 Days Challenge', 'World', 'https://link-hub.net/1461516/UGXa8RIzrmsL')">Details</button>
-        </div>
-    </div>
-</div>
-
-<div class="card" data-category="world">
-    <div class="card-info">
-        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
-        <h3>Space One Block</h3>
-        <p class="card-desc">Survival on a single block floating in deep space. Expand your station across the galaxy.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Space One Block', 'World', 'https://link-center.net/1461516/ESWybPTfunsC')">Details</button>
-        </div>
-    </div>
-</div>
-     
-
-<div class="card" data-category="world">
-    <div class="card-info">
-        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
-        <h3>Ultra Cars</h3>
-        <p class="card-desc">Drive high-speed luxury supercars across a specially designed modern city map.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Ultra Cars', 'World', 'https://link-hub.net/1461516/jlyo2qqyUhvj')">Details</button>
-        </div>
-    </div>
-</div>
-
-
-<div class="card" data-category="world">
-    <div class="card-info">
-        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
-        <h3>Doors</h3>
-        <p class="card-desc">Survive the endless hallways and entities in this terrifying puzzle horror experience.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Doors', 'World', 'https://link-center.net/1461516/bhRo2abpUUZo')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <div class="card" data-category="world">
-    <div class="card-info">
-        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
-        <h3>Realism Craft World</h3>
-        <p class="card-desc">Step into a breathtakingly realistic world with custom terrain and immersive natural landscapes.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Realism Craft World', 'World', 'https://link-hub.net/1461516/BIruac2Qq3SM')">Details</button>
-        </div>
-    </div>
-</div>
-
-
-<div class="card" data-category="world">
-    <div class="card-info">
-        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
-        <h3>Backrooms LVL 99</h3>
-        <p class="card-desc">Navigate through the distorted reality of Level 99. Can you find the exit?</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Backrooms LVL 99', 'World', 'https://direct-link.net/1461516/o7ldhBoDTnoS')">Details</button>
-        </div>
-    </div>
-</div>
-
-
-<div class="card" data-category="world">
-    <div class="card-info">
-        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
-        <h3>Moon Bunker</h3>
-        <p class="card-desc">Survive the lunar wasteland in this highly advanced underground base.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Moon Bunker', 'World', 'https://link-target.net/1461516/32pU0vlAKmOP')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <div class="card" data-category="world">
-    <div class="card-info">
-        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
-        <h3>City Living</h3>
-        <p class="card-desc">Experience a realistic urban life in a highly detailed modern city roleplay map.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('City Living', 'World', 'https://link-hub.net/1461516/LYUzrpVe0mno')">Details</button>
-        </div>
-    </div>
-</div>
-
-                <div class="card" data-category="world">
-    <div class="card-info">
-        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
-        <h3>Cute Modern Furniture</h3>
-        <p class="card-desc">Decorate your dream home with a collection of adorable and stylish modern furniture.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Cute Modern Furniture', 'World', 'https://link-center.net/1461516/X0SXycWLOGAt')">Details</button>
-        </div>
-    </div>
-</div>
-
-<div class="card" data-category="world">
-    <div class="card-info">
-        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
-        <h3>Zombie Bedwars</h3>
-        <p class="card-desc">Protect your bed and survive the undead onslaught in this intense action minigame.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Zombie Bedwars', 'World', 'https://link-hub.net/1461516/czz4hAMfF8qA')">Details</button>
-        </div>
-    </div>
-</div>
-
-<div class="card" data-category="world">
-    <div class="card-info">
-        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
-        <h3>Business Tycoon</h3>
-        <p class="card-desc">Build your empire from the ground up and become the ultimate business mogul in the city.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Business Tycoon', 'World', 'https://link-hub.net/1461516/EYmF1kgzL6V9')">Details</button>
-        </div>
-    </div>
-</div>
-
-
-<div class="card" data-category="world">
-    <div class="card-info">
-        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
-        <h3>Knight School</h3>
-        <p class="card-desc">Enter the academy of warriors and train to become a legendary knight.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Knight School', 'World', 'https://link-center.net/1461516/66yGqMX9z58P')">Details</button>
-        </div>
-    </div>
-</div>
-
-
-
-                <div class="card" data-category="shader">
+                <div class="card" data-category="addon" data-date="2025-11-10">
                     <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Weapons and Power</h3>
+                        <p class="card-desc">Unleash devastating strength with new legendary weapons and supernatural abilities.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Weapons and Power', 'Add-on', 'https://link-hub.net/1461516/Y24Zwg2HmjUN')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="addon" data-date="2025-11-05">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-addon">ADD-ON</span>
+                        <h3>Auto Quarry 1.1</h3>
+                        <p class="card-desc">Advanced automatic mining system for efficient resource gathering in survival.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Auto Quarry 1.1', 'Add-on', 'https://direct-link.net/1461516/uGyA4NPrL2sp')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="world" data-date="2026-05-18">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
+                        <h3>Millionaire Horror Hotel</h3>
+                        <p class="card-desc">Experience terror in an abandoned hotel filled with dark secrets.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Millionaire Horror Hotel', 'World', 'https://direct-link.net/1461516/KYRoc6kVg301')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="world" data-date="2026-05-18">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
+                        <h3>Life in Italy</h3>
+                        <p class="card-desc">Explore the beautiful streets and culture of Italy in this immersive roleplay map.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Life in Italy', 'World', 'https://link-center.net/1461516/71htDC0iTWmd')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="world" data-date="2026-05-17">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
+                        <h3>Animal Ville</h3>
+                        <p class="card-desc">Welcome to a peaceful town where you can live and interact with a variety of friendly animals.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Animal Ville', 'World', 'https://link-target.net/1461516/ZcUEiw4QEgYL')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="world" data-date="2026-05-15">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
+                        <h3>Viking Valley</h3>
+                        <p class="card-desc">Explore a massive Nordic valley filled with Viking longhouses, snowy peaks, and hidden treasures.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Viking Valley', 'World', 'https://link-target.net/1461516/qq8egzZNuJJb')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="world" data-date="2026-05-12">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
+                        <h3>100 Days Challenge</h3>
+                        <p class="card-desc">Test your survival skills in this custom map designed for the ultimate 100-day hardcore experience.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('100 Days Challenge', 'World', 'https://link-hub.net/1461516/UGXa8RIzrmsL')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="world" data-date="2026-05-10">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
+                        <h3>Space One Block</h3>
+                        <p class="card-desc">Survival on a single block floating in deep space. Expand your station across the galaxy.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Space One Block', 'World', 'https://link-center.net/1461516/ESWybPTfunsC')">Details</button>
+                        </div>
+                    </div>
+                </div>
+     
+                <div class="card" data-category="world" data-date="2026-05-09">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
+                        <h3>Ultra Cars</h3>
+                        <p class="card-desc">Drive high-speed luxury supercars across a specially designed modern city map.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Ultra Cars', 'World', 'https://link-hub.net/1461516/jlyo2qqyUhvj')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="world" data-date="2026-05-05">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
+                        <h3>Doors</h3>
+                        <p class="card-desc">Survive the endless hallways and entities in this terrifying puzzle horror experience.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Doors', 'World', 'https://link-center.net/1461516/bhRo2abpUUZo')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="world" data-date="2026-05-02">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
+                        <h3>Realism Craft World</h3>
+                        <p class="card-desc">Step into a breathtakingly realistic world with custom terrain and immersive natural landscapes.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Realism Craft World', 'World', 'https://link-hub.net/1461516/BIruac2Qq3SM')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="world" data-date="2026-04-28">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
+                        <h3>Backrooms LVL 99</h3>
+                        <p class="card-desc">Navigate through the distorted reality of Level 99. Can you find the exit?</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Backrooms LVL 99', 'World', 'https://direct-link.net/1461516/o7ldhBoDTnoS')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="world" data-date="2026-04-25">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
+                        <h3>Moon Bunker</h3>
+                        <p class="card-desc">Survive the lunar wasteland in this highly advanced underground base.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Moon Bunker', 'World', 'https://link-target.net/1461516/32pU0vlAKmOP')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="world" data-date="2026-04-20">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
+                        <h3>City Living</h3>
+                        <p class="card-desc">Experience a realistic urban life in a highly detailed modern city roleplay map.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('City Living', 'World', 'https://link-hub.net/1461516/LYUzrpVe0mno')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="world" data-date="2026-04-15">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
+                        <h3>Cute Modern Furniture</h3>
+                        <p class="card-desc">Decorate your dream home with a collection of adorable and stylish modern furniture.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Cute Modern Furniture', 'World', 'https://link-center.net/1461516/X0SXycWLOGAt')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="world" data-date="2026-04-10">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
+                        <h3>Zombie Bedwars</h3>
+                        <p class="card-desc">Protect your bed and survive the undead onslaught in this intense action minigame.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Zombie Bedwars', 'World', 'https://link-hub.net/1461516/czz4hAMfF8qA')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="world" data-date="2026-04-05">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
+                        <h3>Business Tycoon</h3>
+                        <p class="card-desc">Build your empire from the ground up and become the ultimate business mogul in the city.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Business Tycoon', 'World', 'https://link-hub.net/1461516/EYmF1kgzL6V9')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="world" data-date="2026-04-01">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-world" style="background: #27ae60;">WORLD</span>
+                        <h3>Knight School</h3>
+                        <p class="card-desc">Enter the academy of warriors and train to become a legendary knight.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Knight School', 'World', 'https://link-center.net/1461516/66yGqMX9z58P')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="shader" data-date="2026-05-24">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
                         <span class="tag tag-shader" style="background: #e67e22;">SHADER</span>
                         <h3>Mirai Shader</h3>
                         <p class="card-desc">Optimized lighting and visuals for mobile performance.</p>
@@ -1061,8 +1110,9 @@
                     </div>
                 </div>
 
-                <div class="card" data-category="shader">
+                <div class="card" data-category="shader" data-date="2026-05-20">
                     <div class="card-info">
+                        <div class="badge-container"></div>
                         <span class="tag tag-shader" style="background: #e67e22;">SHADER</span>
                         <h3>Revolution Vibrant</h3>
                         <p class="card-desc">High saturation and stunning environmental colors.</p>
@@ -1072,8 +1122,9 @@
                     </div>
                 </div>
 
-                <div class="card" data-category="shader">
+                <div class="card" data-category="shader" data-date="2026-05-19">
                     <div class="card-info">
+                        <div class="badge-container"></div>
                         <span class="tag tag-shader" style="background: #e67e22;">SHADER</span>
                         <h3>Prizma Visual</h3>
                         <p class="card-desc">Rich colors and advanced dynamic lighting effects.</p>
@@ -1083,8 +1134,9 @@
                     </div>
                 </div>
 
-                <div class="card" data-category="shader">
+                <div class="card" data-category="shader" data-date="2026-05-15">
                     <div class="card-info">
+                        <div class="badge-container"></div>
                         <span class="tag tag-shader" style="background: #e67e22;">SHADER</span>
                         <h3>Luminous Dream</h3>
                         <p class="card-desc">Beautiful dreamy vibes with soft and glowing light.</p>
@@ -1094,8 +1146,9 @@
                     </div>
                 </div>
 
-                <div class="card" data-category="shader">
+                <div class="card" data-category="shader" data-date="2026-05-12">
                     <div class="card-info">
+                        <div class="badge-container"></div>
                         <span class="tag tag-shader" style="background: #e67e22;">SHADER</span>
                         <h3>Solace V</h3>
                         <p class="card-desc">Realistic water and sky reflections for high-end devices.</p>
@@ -1105,20 +1158,21 @@
                     </div>
                 </div>
 
-                <div class="card" data-category="shader">
-    <div class="card-info">
-        <span class="tag tag-shader" style="background: #e67e22;">SHADER</span>
-        <h3>Dark Fantasy Visual</h3>
-        <p class="card-desc">Transform your game with vibrant yet dark fantasy-themed atmospheric visuals.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('Dark Fantasy Visual', 'Shader', 'https://loot-link.com/s?ujHhT0MK')">Details</button>
-        </div>
-    </div>
-</div>
-
-
-                <div class="card" data-category="shader">
+                <div class="card" data-category="shader" data-date="2026-05-10">
                     <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-shader" style="background: #e67e22;">SHADER</span>
+                        <h3>Dark Fantasy Visual</h3>
+                        <p class="card-desc">Transform your game with vibrant yet dark fantasy-themed atmospheric visuals.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('Dark Fantasy Visual', 'Shader', 'https://loot-link.com/s?ujHhT0MK')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-category="shader" data-date="2026-05-02">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
                         <span class="tag tag-shader" style="background: #e67e22;">SHADER</span>
                         <h3>Vanilla Reforged</h3>
                         <p class="card-desc">Modern lighting while keeping the original vanilla feel.</p>
@@ -1128,18 +1182,24 @@
                     </div>
                 </div>
 
-                <div class="card" data-category="world template">
-    <div class="card-info">
-        <span class="tag tag-world">WORLD TEMPLATE</span>
-        <h3>The Ultimate Survival World</h3>
-        <p class="card-desc">Jump into the ultimate survival experience with a pre-built starter base, organized resource areas, and structures ready for adventure.</p>
-        <div class="btn-group">
-            <button class="btn-detail" onclick="openModal('The Ultimate Survival World', 'World Template', 'https://lootdest.org/s?WO6bANjc')">Details</button>
-        </div>
-    </div>
-</div>
+                <div class="card" data-category="world template" data-date="2026-06-09">
+                    <div class="card-info">
+                        <div class="badge-container"></div>
+                        <span class="tag tag-world">WORLD TEMPLATE</span>
+                        <h3>The Ultimate Survival World</h3>
+                        <p class="card-desc">Jump into the ultimate survival experience with a pre-built starter base, organized resource areas, and structures ready for adventure.</p>
+                        <div class="btn-group">
+                            <button class="btn-detail" onclick="openModal('The Ultimate Survival World', 'World Template', 'https://lootdest.org/s?WO6bANjc')">Details</button>
+                        </div>
+                    </div>
+                </div>
 
+            </div>
 
+            <div id="empty-state" class="empty-state" style="display: none;">
+                <i class="fas fa-search-minus"></i>
+                <h3>ไม่พบสิ่งที่คุณกำลังตามหา</h3>
+                <p>ลองพิมพ์คำค้นหาใหม่อีกครั้ง หรือเลือกหมวดหมู่อื่นๆ บนไซด์บาร์</p>
             </div>
         </main>
     </div>
@@ -1159,66 +1219,146 @@
     </div>
 
     <script>
+        // ระบบรันอัตโนมัติเมื่อจัดเรียงโครงสร้างเบราว์เซอร์เสร็จสิ้น
+        document.addEventListener('DOMContentLoaded', () => {
+            initGallerySystem();
+        });
+
+        // ผูกการพิมพ์ค้นหาแบบ Realtime
+        document.getElementById('searchInput').addEventListener('keyup', updateGallery);
+
         /**
-         * Open Modal with dynamic data
+         * ระบบเตรียมความพร้อม ค้นหาวันที่ ติดป้าย New และจัดเรียงจากใหม่สุดขึ้นบนสุดอัตโนมัติ
+         */
+        function initGallerySystem() {
+            const container = document.getElementById('scriptGrid');
+            const cards = Array.from(container.getElementsByClassName('card'));
+            
+            // 🕒 ตั้งค่า: ไอเทมลงเว็บไม่เกินกี่วันให้ติดป้าย New (ตั้งค่าไว้ 3 วัน)
+            const NEW_DAYS_THRESHOLD = 3; 
+            const today = new Date();
+
+            cards.forEach(card => {
+                const dateString = card.getAttribute('data-date');
+                if (!dateString) return;
+
+                const itemDate = new Date(dateString);
+                const timeDiff = today.getTime() - itemDate.getTime();
+                const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+                // 1. ตรวจสอบระยะเวลาวันเพื่อแปะป้าย New อัตโนมัติ
+                if (daysDiff <= NEW_DAYS_THRESHOLD && daysDiff >= 0) {
+                    const badgeContainer = card.querySelector('.badge-container');
+                    if (badgeContainer && !badgeContainer.querySelector('.badge-new')) {
+                        const newBadge = document.createElement('span');
+                        newBadge.className = 'badge badge-new';
+                        newBadge.innerText = 'New';
+                        badgeContainer.insertBefore(newBadge, badgeContainer.firstChild);
+                    }
+                }
+            });
+
+            // 2. สั่งเรียงการ์ดใหม่: เอาของที่อัปเดตล่าสุด (data-date ใหม่สุด) ดีดตัวขึ้นบนสุด
+            cards.sort((a, b) => {
+                const dateA = new Date(a.getAttribute('data-date') || 0);
+                const dateB = new Date(b.getAttribute('data-date') || 0);
+                return dateB - dateA;
+            });
+
+            // เคลียร์ค่าโครงสร้างเดิม และนำโครงสร้างการ์ดที่สลับเรียบร้อยใส่กลับเข้าไป
+            container.innerHTML = "";
+            cards.forEach(card => container.appendChild(card));
+
+            // แสดงผลลัพธ์คัดกรองครั้งแรก
+            updateGallery();
+        }
+
+        /**
+         * ฟังก์ชันกรองข้อมูลหมวดหมู่และการค้นหา
+         */
+        function updateGallery() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const activeNavItem = document.querySelector('.nav-item.active');
+            const activeCategory = activeNavItem ? activeNavItem.getAttribute('data-cat') : 'all';
+            const cards = document.querySelectorAll('.card');
+            const emptyState = document.getElementById('empty-state');
+            
+            let visibleCardsCount = 0;
+
+            cards.forEach(card => {
+                const title = card.querySelector('h3').innerText.toLowerCase();
+                const category = card.getAttribute('data-category');
+                const isCategoryMatch = (activeCategory === 'all' || category === activeCategory);
+                const isSearchMatch = title.includes(searchTerm);
+
+                if (isCategoryMatch && isSearchMatch) {
+                    visibleCardsCount++;
+                    if (card.style.display !== "flex") {
+                        card.style.display = "flex";
+                        card.style.animation = 'none';
+                        card.offsetHeight; // รีเฟรชแอนิเมชัน CSS
+                        card.style.animation = ''; 
+                    }
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            // หากไม่พบผลการค้นหาเลย ให้เด้งป้าย Empty State แจ้งผู้ใช้
+            if (visibleCardsCount === 0) {
+                emptyState.style.display = "block";
+            } else {
+                emptyState.style.display = "none";
+            }
+        }
+
+        /**
+         * ฟังก์ชันสลับคลาส Active ของเมนูไซด์บาร์
+         */
+        function filterScripts(category, element) {
+            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+            element.classList.add('active');
+            updateGallery();
+        }
+
+        /**
+         * ฟังก์ชันเปิดหน้าต่างโหลดโมดอล
          */
         function openModal(name, cat, link) {
             document.getElementById('modalTitle').innerText = name;
             document.getElementById('modalCategory').innerText = cat;
             document.getElementById('scriptLink').href = link;
-            document.getElementById('scriptModal').style.display = "flex";
+            
+            const modal = document.getElementById('scriptModal');
+            const modalContent = modal.querySelector('.modal-content');
+            
+            modalContent.style.animation = 'modalPopOpen 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards';
+            modal.style.transition = 'opacity 0.25s ease';
+            modal.style.opacity = '0';
+            modal.style.display = "flex";
+            
+            setTimeout(() => { modal.style.opacity = '1'; }, 10);
         }
 
         /**
-         * Close Modal
+         * ฟังก์ชันปิดหน้าต่างโหลดโมดอลพร้อมหน่วงเวลาอนิเมชันปิด
          */
         function closeModal() {
-            document.getElementById('scriptModal').style.display = "none";
+            const modal = document.getElementById('scriptModal');
+            const modalContent = modal.querySelector('.modal-content');
+            
+            modalContent.style.animation = 'modalPopClose 0.2s cubic-bezier(0.25, 0.8, 0.25, 1) forwards';
+            modal.style.opacity = '0';
+            
+            setTimeout(() => { modal.style.display = "none"; }, 200); 
         }
 
-        /**
-         * Filter items by category
-         */
-        function filterScripts(category, element) {
-            // Update Active Class
-            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
-            element.classList.add('active');
-
-            // Show/Hide Cards
-            let cards = document.querySelectorAll('.card');
-            cards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        /**
-         * Search functionality
-         */
-        document.getElementById('searchInput').addEventListener('input', function(e) {
-            let term = e.target.value.toLowerCase();
-            let cards = document.querySelectorAll('.card');
-            cards.forEach(card => {
-                let name = card.querySelector('h3').innerText.toLowerCase();
-                card.style.display = name.includes(term) ? 'block' : 'none';
-            });
-        });
-
-        /**
-         * Close modal when clicking outside content
-         */
+        // ปิดโมดอลเมื่อกดหลังพื้นหลังสีดำ
         window.onclick = function(event) {
             let modal = document.getElementById('scriptModal');
             if (event.target == modal) {
                 closeModal();
             }
-        }
-
-        function updateGallery() {
-            console.log("Star MCBE Hub Ready.");
         }
     </script>
 </body>
