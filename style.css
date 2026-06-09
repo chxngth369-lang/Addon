@@ -1,83 +1,131 @@
+/* ==========================================================================
+   VARIABLES & BASE STYLES
+   ========================================================================== */
 :root {
     --primary: #00ffcc; /* สีเขียวมิ้นต์สะท้อนแสง */
     --accent: #ff0055;
     --bg-dark: #050a15;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: var(--bg-dark); color: white; font-family: 'Kanit', sans-serif; overflow-x: hidden; }
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
 
-/* Background & Stars */
-.bg-wrapper { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%); }
-.night { position: relative; width: 100%; height: 100%; transform: rotateZ(45deg); }
-.shooting_star { position: absolute; height: 2px; background: linear-gradient(-45deg, var(--primary), rgba(0,0,255,0)); border-radius: 999px; animation: tail 2s ease-in-out infinite, shooting 2s ease-in-out infinite; }
-@keyframes tail { 0% { width: 0; } 30% { width: 160px; } 100% { width: 0; } }
-@keyframes shooting { 0% { transform: translateX(0); } 100% { transform: translateX(900px); } }
+body { 
+    background: var(--bg-dark); 
+    color: white; 
+    font-family: 'Kanit', sans-serif; 
+    overflow-x: hidden; 
+}
 
-/* Sidebar & Layout */
-.app-container { display: flex; min-height: 100vh; }
-.sidebar { width: 280px; background: rgba(10, 17, 32, 0.95); backdrop-filter: blur(20px); padding: 40px 20px; border-right: 1px solid rgba(255,255,255,0.05); }
-.main-content { flex-grow: 1; padding: 40px; }
-.logo { font-size: 1.8rem; font-weight: bold; text-shadow: 0 0 15px var(--primary); margin-bottom: 40px; text-align: center; }
+/* ==========================================================================
+   BACKGROUND & ANIMATED STARS
+   ========================================================================== */
+.bg-wrapper { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    z-index: -2; 
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%); 
+}
 
-/* Navigation (อัปเกรดให้เด้งนุ่ม ลอยเบาๆ ตอนชี้ และยุบตัวตอนกด) */
+.night { 
+    position: relative; 
+    width: 100%; 
+    height: 100%; 
+    transform: rotateZ(45deg); 
+}
+
+.shooting_star { 
+    position: absolute; 
+    height: 2px; 
+    background: linear-gradient(-45deg, var(--primary), rgba(0,0,255,0)); 
+    border-radius: 999px; 
+    animation: tail 2s ease-in-out infinite, shooting 2s ease-in-out infinite; 
+}
+
+@keyframes tail { 
+    0% { width: 0; } 
+    30% { width: 160px; } 
+    100% { width: 0; } 
+}
+
+@keyframes shooting { 
+    0% { transform: translateX(0); } 
+    100% { transform: translateX(900px); } 
+}
+
+/* ==========================================================================
+   LAYOUT & SIDEBAR
+   ========================================================================== */
+.app-container { 
+    display: flex; 
+    min-height: 100vh; 
+}
+
+.sidebar { 
+    width: 280px; 
+    background: rgba(10, 17, 32, 0.95); 
+    backdrop-filter: blur(20px); 
+    padding: 40px 20px; 
+    border-right: 1px solid rgba(255,255,255,0.05); 
+}
+
+.main-content { 
+    flex-grow: 1; 
+    padding: 40px; 
+}
+
+.logo { 
+    font-size: 1.8rem; 
+    font-weight: bold; 
+    text-shadow: 0 0 15px var(--primary); 
+    margin-bottom: 40px; 
+    text-align: center; 
+}
+
+/* ==========================================================================
+   NAVIGATION MENU (SIDEBAR)
+   ========================================================================== */
 .nav-item { 
     padding: 12px 15px; 
     border-radius: 12px; 
     cursor: pointer; 
     color: #888; 
     margin-bottom: 8px; 
-    transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1), 
-                color 0.25s ease, 
-                background-color 0.25s ease; 
     display: flex; 
     align-items: center; 
     gap: 12px; 
+    /* เพิ่ม Transition ความเร็วแบบนุ่มนวล */
+    transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                color 0.25s ease, 
+                background-color 0.25s ease; 
 }
+
+/* เอฟเฟกต์ตอนเอาเมาส์ชี้เมนู: ขยับไปทางขวาเล็กน้อย */
 .nav-item:hover {
     color: #fff;
-    transform: translateX(4px); /* ขยับไปขวาเบาๆ แทนการลอย */
+    transform: translateX(4px); 
 }
+
+/* เอฟเฟกต์ตอนคลิกเมนู: จะยุบตัวลงเล็กน้อย ให้ความรู้สึกเหมือนปุ่มจริง */
 .nav-item:active {
-    transform: translateX(2px) scale(0.98); /* ยุบตัวตอนคลิกจริง */
+    transform: translateX(2px) scale(0.98); 
 }
+
 .nav-item.active { 
     background: rgba(0, 255, 204, 0.1); 
     color: var(--primary); 
     box-shadow: inset 0 0 10px rgba(0, 255, 204, 0.05);
 }
 
-/* Tags (เพิ่มแท็กเวิลด์เทมเพลตให้ด้วยครับ) */
-.tag-addon { background: var(--primary); color: #000; font-size: 0.7rem; padding: 4px 10px; border-radius: 5px; font-weight: bold; }
-.tag-world { background: #2e7d32; color: #fff; font-size: 0.7rem; padding: 4px 10px; border-radius: 5px; font-weight: bold; } /* เพิ่มสไตล์สีเขียวสไตล์ Survival */
-
-/* Grid & Cards (อัปเกรดให้การ์ดลอยเด้งสไตล์ Back-Ease สวยๆ และโหลดสมูท) */
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 25px; }
-.card { 
-    background: rgba(255, 255, 255, 0.03); 
-    border-radius: 20px; 
-    border: 1px solid rgba(255,255,255,0.05); 
-    padding: 30px; 
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
-                border-color 0.4s ease, 
-                box-shadow 0.4s ease;
-    will-change: transform, box-shadow;
-    animation: fadeInUp 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) both; /* แอนิเมชันการ์ดโหลดโผล่ขึ้นมา */
-}
-.card:hover { 
-    transform: translateY(-8px) scale(1.01); /* ลอยสูงขึ้นและขยายมิติเล็กน้อย */
-    border-color: var(--primary); 
-    box-shadow: 0 15px 35px rgba(0, 255, 204, 0.15), 
-                0 0 15px rgba(0, 255, 204, 0.05); 
-}
-
-/* แอนิเมชันตอนโหลดการ์ดเข้ามาใหม่ (Fade In + ลอยขึ้น) */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Search Bar (อัปเกรดให้เรืองแสงขึ้นตอนคลิกพิม) */
+/* ==========================================================================
+   SEARCH BAR
+   ========================================================================== */
 .search-bar { 
     background: rgba(255,255,255,0.03); 
     padding: 12px 25px; 
@@ -85,15 +133,77 @@ body { background: var(--bg-dark); color: white; font-family: 'Kanit', sans-seri
     border: 1px solid rgba(0, 255, 204, 0.3); 
     max-width: 500px; 
     margin: 30px 0; 
+    /* เพิ่ม Transition ตอนคลิกพิมพ์ */
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* เอฟเฟกต์ตอนกดคลิกช่องพิมพ์: ขอบจะเรืองแสงขึ้นมา */
 .search-bar:focus-within {
     border-color: var(--primary);
     box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
 }
-.search-bar input { background: transparent; border: none; color: white; outline: none; margin-left: 15px; width: 100%; }
 
-/* Buttons (อัปเกรดให้ตอบสนองตอนกดดีขึ้น) */
+.search-bar input { 
+    background: transparent; 
+    border: none; 
+    color: white; 
+    outline: none; 
+    margin-left: 15px; 
+    width: 100%; 
+}
+
+/* ==========================================================================
+   CARDS & TAGS
+   ========================================================================== */
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+    gap: 25px; 
+}
+
+.card { 
+    background: rgba(255, 255, 255, 0.03); 
+    border-radius: 20px; 
+    border: 1px solid rgba(255,255,255,0.05); 
+    padding: 30px; 
+    /* ใช้ cubic-bezier เพื่อให้เวลาเมาส์ชี้แล้วการ์ดเด้งลอยขึ้นมาแบบเด้งดึ๋งนุ่มๆ */
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                border-color 0.4s ease, 
+                box-shadow 0.4s ease;
+    will-change: transform, box-shadow;
+}
+
+/* เอฟเฟกต์ตอนชี้การ์ด: ลอยขึ้น ขยายมิติเล็กน้อย ขอบเปลี่ยนสี และมีแสงฟุ้งด้านหลัง */
+.card:hover { 
+    transform: translateY(-8px) scale(1.01); 
+    border-color: var(--primary); 
+    box-shadow: 0 15px 35px rgba(0, 255, 204, 0.15), 
+                0 0 15px rgba(0, 255, 204, 0.05); 
+}
+
+/* สไตล์ของแท็กแต่ละหมวดหมู่ */
+.tag-addon { 
+    background: var(--primary); 
+    color: #000; 
+    font-size: 0.7rem; 
+    padding: 4px 10px; 
+    border-radius: 5px; 
+    font-weight: bold; 
+}
+
+/* แท็กสำหรับหมวดหมู่ World Template */
+.tag-world { 
+    background: #2e7d32; /* สีเขียวเข้มสไตล์เอาชีวิตรอด */
+    color: #fff; 
+    font-size: 0.7rem; 
+    padding: 4px 10px; 
+    border-radius: 5px; 
+    font-weight: bold; 
+}
+
+/* ==========================================================================
+   BUTTONS & MODAL (POPUP)
+   ========================================================================== */
 .btn-detail { 
     background: linear-gradient(135deg, var(--primary), #00ccaa); 
     color: black; 
@@ -103,31 +213,32 @@ body { background: var(--bg-dark); color: white; font-family: 'Kanit', sans-seri
     font-weight: bold; 
     width: 100%; 
     cursor: pointer; 
+    /* ปรับแต่งแอนิเมชันปุ่มตอนกด */
     transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.2s ease;
 }
+
 .btn-detail:hover {
-    filter: brightness(1.15); /* สว่างวาบขึ้นเล็กน้อย */
-}
-.btn-detail:active {
-    transform: scale(0.97); /* ปุ่มยุบลงตอนคลิกจริง */
+    filter: brightness(1.15); /* สว่างวาบขึ้นเล็กน้อยเมื่อชี้ */
 }
 
-/* Modal (อัปเกรดให้ Popup ค่อยๆ จางและกล่องเด้งขยายตัวนุ่มๆ) */
+.btn-detail:active {
+    transform: scale(0.97); /* ปุ่มยุบตัวลงตอนคลิกจริง */
+}
+
+/* หน้าต่าง Modal พื้นหลังดำ */
 .modal { 
     display: none; 
     position: fixed; 
     z-index: 1000; 
-    left: 0; top: 0; 
-    width: 100%; height: 100%; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
     background: rgba(0, 0, 0, 0.85); 
-    backdrop-filter: blur(8px); /* เพิ่มเบลอพื้นหลังให้ดูหรูขึ้น */
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    backdrop-filter: blur(8px); /* เพิ่มเอฟเฟกต์กระจกเบลอด้านหลัง popup */
 }
-/* คลาสสำหรับคุมความสมูทตอนเปิดด้วย JavaScript */
-.modal.show {
-    opacity: 1;
-}
+
+/* กล่องเนื้อหาด้านใน Modal */
 .modal-content { 
     background: #0f172a; 
     margin: 20vh auto; 
@@ -138,14 +249,24 @@ body { background: var(--bg-dark); color: white; font-family: 'Kanit', sans-seri
     text-align: center; 
     position: relative; 
     border: 1px solid rgba(255,255,255,0.05);
-    transform: scale(0.85) translateY(30px);
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-.modal.show .modal-content {
-    transform: scale(1) translateY(0);
+    /* แอนิเมชันเด้งขยายตัวจากเล็กไปใหญ่ตอนเปิดโมดอล */
+    animation: modalBounce 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* RGB Button */
+@keyframes modalBounce {
+    from { 
+        transform: scale(0.8) translateY(30px); 
+        opacity: 0; 
+    }
+    to { 
+        transform: scale(1) translateY(0); 
+        opacity: 1; 
+    }
+}
+
+/* ==========================================================================
+   RGB BUTTON ANIMATION
+   ========================================================================== */
 .rgb-animate { 
     background: linear-gradient(45deg, #ff0000, #48ff00, #002bff, #ff0000); 
     background-size: 400%; 
@@ -159,7 +280,13 @@ body { background: var(--bg-dark); color: white; font-family: 'Kanit', sans-seri
     font-weight: bold; 
     transition: transform 0.2s ease;
 }
+
 .rgb-animate:active {
     transform: scale(0.95);
 }
-@keyframes rgb-glow { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+@keyframes rgb-glow { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+}
