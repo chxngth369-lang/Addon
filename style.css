@@ -1,292 +1,538 @@
 /* ==========================================================================
-   VARIABLES & BASE STYLES
+   📌 1. SETUP & CORE VARIABLES (ตั้งค่าพื้นฐานและโทนสี)
    ========================================================================== */
 :root {
-    --primary: #00ffcc; /* สีเขียวมิ้นต์สะท้อนแสง */
-    --accent: #ff0055;
-    --bg-dark: #050a15;
+    --bg-color: #0c0e12;
+    --card-bg: #161920;
+    --sidebar-bg: #111319;
+    --text-main: #ffffff;
+    --text-muted: #8a8f98;
+    
+    /* โทนสีป้ายและหมวดหมู่ */
+    --color-new-1: #00ff87;
+    --color-new-2: #60efff;
+    --color-hot: #ff4757;
+    --color-star: #ffa502;
+    --color-accent: #2ecc71;
+    
+    --font-kanit: 'Kanit', sans-serif;
 }
 
-* { 
-    box-sizing: border-box; 
-    margin: 0; 
-    padding: 0; 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body { 
-    background: var(--bg-dark); 
-    color: white; 
-    font-family: 'Kanit', sans-serif; 
-    overflow-x: hidden; 
-}
-
-/* ==========================================================================
-   BACKGROUND & ANIMATED STARS
-   ========================================================================== */
-.bg-wrapper { 
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%; 
-    z-index: -2; 
-    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%); 
-}
-
-.night { 
-    position: relative; 
-    width: 100%; 
-    height: 100%; 
-    transform: rotateZ(45deg); 
-}
-
-.shooting_star { 
-    position: absolute; 
-    height: 2px; 
-    background: linear-gradient(-45deg, var(--primary), rgba(0,0,255,0)); 
-    border-radius: 999px; 
-    animation: tail 2s ease-in-out infinite, shooting 2s ease-in-out infinite; 
-}
-
-@keyframes tail { 
-    0% { width: 0; } 
-    30% { width: 160px; } 
-    100% { width: 0; } 
-}
-
-@keyframes shooting { 
-    0% { transform: translateX(0); } 
-    100% { transform: translateX(900px); } 
+body {
+    font-family: var(--font-kanit), 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    overflow-x: hidden;
 }
 
 /* ==========================================================================
-   LAYOUT & SIDEBAR
+   🌌 2. ANIMATED BACKGROUND (เอฟเฟกต์ดาวตกพื้นหลังเว็บ)
    ========================================================================== */
-.app-container { 
-    display: flex; 
-    min-height: 100vh; 
+.bg-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }
 
-.sidebar { 
-    width: 280px; 
-    background: rgba(10, 17, 32, 0.95); 
-    backdrop-filter: blur(20px); 
-    padding: 40px 20px; 
-    border-right: 1px solid rgba(255,255,255,0.05); 
+.night {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: rotateZ(45deg);
 }
 
-.main-content { 
-    flex-grow: 1; 
-    padding: 40px; 
+.shooting_star {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 2px;
+    background: linear-gradient(-45deg, #5f91ff, rgba(0, 0, 244, 0));
+    border-radius: 999px;
+    filter: drop-shadow(0 0 6px #699bff);
+    animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;
 }
 
-.logo { 
-    font-size: 1.8rem; 
-    font-weight: bold; 
-    text-shadow: 0 0 15px var(--primary); 
-    margin-bottom: 40px; 
-    text-align: center; 
+.shooting_star::before, .shooting_star::after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 1px);
+    right: 0;
+    height: 2px;
+    background: linear-gradient(-45deg, rgba(0, 0, 244, 0), #5f91ff, rgba(0, 0, 244, 0));
+    transform: translateX(50%) rotateZ(45deg);
+    border-radius: 999px;
+}
+
+.shooting_star::after {
+    transform: translateX(50%) rotateZ(-45deg);
+}
+
+/* ลูปสุ่มตำแหน่งดาวตก */
+.shooting_star:nth-child(1) { top: calc(50% - 200px); left: calc(50% - 300px); animation-delay: 100ms; }
+.shooting_star:nth-child(2) { top: calc(50% - 50px); left: calc(50% - 100px); animation-delay: 1200ms; }
+.shooting_star:nth-child(3) { top: calc(50% - 150px); left: calc(50% - 250px); animation-delay: 4500ms; }
+.shooting_star:nth-child(4) { top: calc(50% - 10px); left: calc(50% - 50px); animation-delay: 2300ms; }
+.shooting_star:nth-child(5) { top: calc(50% - 180px); left: calc(50% - 120px); animation-delay: 5500ms; }
+.shooting_star:nth-child(6) { top: calc(50% - 120px); left: calc(50% - 290px); animation-delay: 3100ms; }
+.shooting_star:nth-child(7) { top: calc(50% - 20px); left: calc(50% - 180px); animation-delay: 800ms; }
+.shooting_star:nth-child(8) { top: calc(50% - 90px); left: calc(50% - 220px); animation-delay: 1900ms; }
+.shooting_star:nth-child(9) { top: calc(50% - 140px); left: calc(50% - 70px); animation-delay: 4000ms; }
+.shooting_star:nth-child(10) { top: calc(50% - 60px); left: calc(50% - 150px); animation-delay: 2700ms; }
+
+@keyframes tail {
+    0% { width: 0; }
+    30% { width: 100px; }
+    100% { width: 0; }
+}
+@keyframes shooting {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(300px); }
 }
 
 /* ==========================================================================
-   NAVIGATION MENU (SIDEBAR)
+   📱 3. MAIN LAYOUT STRUCTURE (โครงสร้างหน้าเว็บหลัก)
    ========================================================================== */
-.nav-item { 
-    padding: 12px 15px; 
-    border-radius: 12px; 
-    cursor: pointer; 
-    color: #888; 
-    margin-bottom: 8px; 
-    display: flex; 
-    align-items: center; 
-    gap: 12px; 
-    /* เพิ่ม Transition ความเร็วแบบนุ่มนวล */
-    transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1), 
-                color 0.25s ease, 
-                background-color 0.25s ease; 
+.app-container {
+    display: flex;
+    min-height: 100vh;
 }
 
-/* เอฟเฟกต์ตอนเอาเมาส์ชี้เมนู: ขยับไปทางขวาเล็กน้อย */
-.nav-item:hover {
-    color: #fff;
-    transform: translateX(4px); 
+/* สไตล์แถบเมนูด้านซ้าย (Sidebar) */
+.sidebar {
+    width: 260px;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid #1f242e;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-/* เอฟเฟกต์ตอนคลิกเมนู: จะยุบตัวลงเล็กน้อย ให้ความรู้สึกเหมือนปุ่มจริง */
-.nav-item:active {
-    transform: translateX(2px) scale(0.98); 
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, var(--color-new-2) 0%, var(--color-new-1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.nav-item.active { 
-    background: rgba(0, 255, 204, 0.1); 
-    color: var(--primary); 
-    box-shadow: inset 0 0 10px rgba(0, 255, 204, 0.05);
+.nav-title {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.nav-menu {
+    list-style: none;
+}
+
+.nav-item {
+    padding: 12px 15px;
+    border-radius: 8px;
+    color: var(--text-muted);
+    cursor: pointer;
+    margin-bottom: 8px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+}
+
+.nav-item:hover, .nav-item.active {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+}
+
+.nav-item.active {
+    border-left: 3px solid var(--color-accent);
+}
+
+/* พื้นที่เนื้อหาหลักด้านขวา */
+.main-content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* ส่วนหัวและการค้นหา */
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.search-bar {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+}
+
+.search-bar i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    background-color: var(--sidebar-bg);
+    border: 1px solid #1f242e;
+    border-radius: 8px;
+    color: var(--text-main);
+    font-family: var(--font-kanit);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-bar input:focus {
+    border-color: rgba(0, 255, 135, 0.5);
 }
 
 /* ==========================================================================
-   SEARCH BAR
+   🖼️ 4. WELCOME BANNER (ส่วนหัวแบนเนอร์ - คลีนเรียบร้อยไม่มีตัวนับเลข)
    ========================================================================== */
-.search-bar { 
-    background: rgba(255,255,255,0.03); 
-    padding: 12px 25px; 
-    border-radius: 50px; 
-    border: 1px solid rgba(0, 255, 204, 0.3); 
-    max-width: 500px; 
-    margin: 30px 0; 
-    /* เพิ่ม Transition ตอนคลิกพิมพ์ */
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+.welcome-banner {
+    background: linear-gradient(135deg, #1a1f2c 0%, #11141d 100%);
+    border: 1px solid #232a3a;
+    border-radius: 16px;
+    padding: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
-/* เอฟเฟกต์ตอนกดคลิกช่องพิมพ์: ขอบจะเรืองแสงขึ้นมา */
-.search-bar:focus-within {
-    border-color: var(--primary);
-    box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
+.banner-text {
+    max-width: 70%;
+    z-index: 1;
 }
 
-.search-bar input { 
-    background: transparent; 
-    border: none; 
-    color: white; 
-    outline: none; 
-    margin-left: 15px; 
-    width: 100%; 
+.banner-tag {
+    font-size: 0.75rem;
+    background: rgba(255, 71, 87, 0.15);
+    color: var(--color-hot);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.welcome-banner h2 {
+    font-size: 2rem;
+    margin: 12px 0 8px 0;
+}
+
+.welcome-banner p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.banner-visual {
+    font-size: 5rem;
+    color: rgba(255, 255, 255, 0.03);
+    position: absolute;
+    right: 30px;
+    transform: rotate(-15deg);
 }
 
 /* ==========================================================================
-   CARDS & TAGS
+   📦 5. CARD GRID & SCRIPT CARDS (การ์ดไอเทมเดี่ยวและแท็กกลุ่มสถานะ)
    ========================================================================== */
-.grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
-    gap: 25px; 
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    gap: 25px;
 }
 
-.card { 
-    background: rgba(255, 255, 255, 0.03); 
-    border-radius: 20px; 
-    border: 1px solid rgba(255,255,255,0.05); 
-    padding: 30px; 
-    /* ใช้ cubic-bezier เพื่อให้เวลาเมาส์ชี้แล้วการ์ดเด้งลอยขึ้นมาแบบเด้งดึ๋งนุ่มๆ */
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
-                border-color 0.4s ease, 
-                box-shadow 0.4s ease;
-    will-change: transform, box-shadow;
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid #1f242e;
+    border-radius: 14px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+    animation: cardFadeIn 0.4s ease forwards;
 }
 
-/* เอฟเฟกต์ตอนชี้การ์ด: ลอยขึ้น ขยายมิติเล็กน้อย ขอบเปลี่ยนสี และมีแสงฟุ้งด้านหลัง */
-.card:hover { 
-    transform: translateY(-8px) scale(1.01); 
-    border-color: var(--primary); 
-    box-shadow: 0 15px 35px rgba(0, 255, 204, 0.15), 
-                0 0 15px rgba(0, 255, 204, 0.05); 
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    border-color: #2b3342;
 }
 
-/* สไตล์ของแท็กแต่ละหมวดหมู่ */
-.tag-addon { 
-    background: var(--primary); 
-    color: #000; 
-    font-size: 0.7rem; 
-    padding: 4px 10px; 
-    border-radius: 5px; 
-    font-weight: bold; 
+/* --- 🏷️ คอนเทนเนอร์รวมป้ายสถานะด้านบนของการ์ด --- */
+.badge-container {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+    min-height: 24px; /* รักษาระยะการ์ดไม่ให้โยก */
 }
 
-/* แท็กสำหรับหมวดหมู่ World Template */
-.tag-world { 
-    background: #2e7d32; /* สีเขียวเข้มสไตล์เอาชีวิตรอด */
-    color: #fff; 
-    font-size: 0.7rem; 
-    padding: 4px 10px; 
-    border-radius: 5px; 
-    font-weight: bold; 
+.badge {
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
 }
 
-/* ==========================================================================
-   BUTTONS & MODAL (POPUP)
-   ========================================================================== */
-.btn-detail { 
-    background: linear-gradient(135deg, var(--primary), #00ccaa); 
-    color: black; 
-    border: none; 
-    padding: 12px; 
-    border-radius: 12px; 
-    font-weight: bold; 
-    width: 100%; 
-    cursor: pointer; 
-    /* ปรับแต่งแอนิเมชันปุ่มตอนกด */
-    transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.2s ease;
+/* 🟢 ป้าย New อัตโนมัติ (เรืองแสง + ขยับชีพจร) */
+.badge-new {
+    background: linear-gradient(135deg, var(--color-new-1) 0%, var(--color-new-2) 100%);
+    color: #040507;
+    box-shadow: 0 0 12px rgba(0, 255, 135, 0.4);
+    animation: pulseGlow 2s infinite;
+}
+
+/* 🔴 ป้าย Hot Update */
+.badge-hot {
+    background-color: var(--color-hot);
+    color: #ffffff;
+}
+
+/* 🟡 ป้าย Star */
+.badge-star {
+    background-color: var(--color-star);
+}
+
+/* ข้อมูลเนื้อหาภายในการ์ด */
+.card-info .tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+/* แท็กประเภทคงเหลือ */
+.tag-addon { background-color: #e67e22; color: white; }
+.tag-world { background-color: #27ae60; color: white; }
+
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.card-desc {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    /* ตัดคำกรณีข้อความยาวเกินไป */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ปุ่มกดภายใน */
+.btn-group {
+    margin-top: auto;
+}
+
+.btn-detail {
+    width: 100%;
+    background-color: #1e222b;
+    border: 1px solid #2d3545;
+    color: var(--text-main);
+    padding: 11px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-family: var(--font-kanit);
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
 .btn-detail:hover {
-    filter: brightness(1.15); /* สว่างวาบขึ้นเล็กน้อยเมื่อชี้ */
-}
-
-.btn-detail:active {
-    transform: scale(0.97); /* ปุ่มยุบตัวลงตอนคลิกจริง */
-}
-
-/* หน้าต่าง Modal พื้นหลังดำ */
-.modal { 
-    display: none; 
-    position: fixed; 
-    z-index: 1000; 
-    left: 0; 
-    top: 0; 
-    width: 100%; 
-    height: 100%; 
-    background: rgba(0, 0, 0, 0.85); 
-    backdrop-filter: blur(8px); /* เพิ่มเอฟเฟกต์กระจกเบลอด้านหลัง popup */
-}
-
-/* กล่องเนื้อหาด้านใน Modal */
-.modal-content { 
-    background: #0f172a; 
-    margin: 20vh auto; 
-    padding: 40px; 
-    border-radius: 25px; 
-    width: 90%; 
-    max-width: 400px; 
-    text-align: center; 
-    position: relative; 
-    border: 1px solid rgba(255,255,255,0.05);
-    /* แอนิเมชันเด้งขยายตัวจากเล็กไปใหญ่ตอนเปิดโมดอล */
-    animation: modalBounce 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-@keyframes modalBounce {
-    from { 
-        transform: scale(0.8) translateY(30px); 
-        opacity: 0; 
-    }
-    to { 
-        transform: scale(1) translateY(0); 
-        opacity: 1; 
-    }
+    background-color: var(--text-main);
+    color: var(--bg-color);
+    border-color: var(--text-main);
 }
 
 /* ==========================================================================
-   RGB BUTTON ANIMATION
+   🗂️ 6. MODAL & WINDOWS SYSTEM (หน้าต่างป๊อปอัปเมื่อกดโหลด)
    ========================================================================== */
-.rgb-animate { 
-    background: linear-gradient(45deg, #ff0000, #48ff00, #002bff, #ff0000); 
-    background-size: 400%; 
-    animation: rgb-glow 8s linear infinite; 
-    text-decoration: none; 
-    padding: 15px 30px; 
-    border-radius: 50px; 
-    display: inline-block; 
-    color: white; 
-    margin-top: 20px; 
-    font-weight: bold; 
-    transition: transform 0.2s ease;
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(4, 5, 7, 0.85);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
 }
 
-.rgb-animate:active {
-    transform: scale(0.95);
+.modal-content {
+    background-color: var(--card-bg);
+    border: 1px solid #2b3342;
+    padding: 35px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.7);
 }
 
-@keyframes rgb-glow { 
-    0% { background-position: 0% 50%; } 
-    50% { background-position: 100% 50%; } 
-    100% { background-position: 0% 50%; } 
+.close-btn {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    font-size: 1.8rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: var(--color-hot);
+}
+
+.modal-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.modal-body-text {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* ปุ่มดาวน์โหลดสีรุ้งเรืองแสง */
+.get-script-btn {
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.4);
+}
+
+.get-script-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px rgba(46, 204, 113, 0.7);
+}
+
+/* ==========================================================================
+   🔍 7. EMPTY STATES & ANIMATIONS (สเตทหน้าว่างและชุดอนิเมชัน)
+   ========================================================================== */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    width: 100%;
+}
+
+.empty-state i {
+    font-size: 3.5rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.empty-state h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* อนิเมชันชีพจรกระพริบของป้าย New */
+@keyframes pulseGlow {
+    0% { transform: scale(1); box-shadow: 0 0 12px rgba(0, 255, 135, 0.4); }
+    50% { transform: scale(1.04); box-shadow: 0 0 20px rgba(0, 255, 135, 0.7); }
+    100% { transform: scale(1); box-shadow: 0 0 12px rgba(0, 255, 135, 0.4); }
+}
+
+@keyframes cardFadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes modalPopOpen {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes modalPopClose {
+    from { transform: scale(1); opacity: 1; }
+    to { transform: scale(0.9); opacity: 0; }
+}
+
+/* ==========================================================================
+   📱 8. RESPONSIVE MEDIA QUERIES (การแสดงผลบนอุปกรณ์เคลื่อนที่และแท็บเล็ต)
+   ========================================================================== */
+@media (max-width: 900px) {
+    .app-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #1f242e;
+        padding: 20px;
+    }
+    .logo {
+        margin-bottom: 20px;
+    }
+    .nav-item {
+        display: inline-flex;
+        margin-right: 10px;
+        margin-bottom: 5px;
+    }
+    .main-content {
+        padding: 20px;
+    }
+    .welcome-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 25px;
+    }
+    .banner-text {
+        max-width: 100%;
+    }
+    .banner-visual {
+        display: none;
+    }
 }
